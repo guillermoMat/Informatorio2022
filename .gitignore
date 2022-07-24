@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+*.pyc
+# *.jpg
+
+pryectoInfo2022/pryectoInfo2022/settings/local.py
