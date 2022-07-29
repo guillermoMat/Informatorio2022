@@ -8,3 +8,5 @@ def inicio(request):
     return render(request,'inicio.html', {"nom":nombre,"lis":lista})
     
    
+
+    

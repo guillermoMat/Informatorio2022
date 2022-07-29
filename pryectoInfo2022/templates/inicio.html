@@ -78,13 +78,19 @@
     
       <div class="container">
         <div class="row">
-          <h1 class="text-primary">Grupo <span class="badge bg-danger">4</span></h1>
-          {% for x in lis%}
-          <h3 class="text-secondary">{{x}}</h3>
-          {% endfor %}
-        </div>
-
+          <div class="col-3">
+            <h1 class="text-primary">Grupo <span class="badge bg-danger">4</span></h1>
+          </div>
+          <div class="col">
+            <ul>
+              {% for x in lis%}
+                <li class="text-secondary"><h3>{{x}}</h3></li>
+              {% endfor %}
+            </ul>
+          </div>
       </div>
+
+      </div>   
       
    
   </body>
