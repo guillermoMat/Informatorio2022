@@ -1,6 +1,6 @@
 # PROYECTOFINAL_2022_Grupo4
 
-## Tema:
+## Tema: Blog Lalcec
 > Integrantes<sub>nombre</sub>:
 
 

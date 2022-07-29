@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blog</title>
+
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+      
+    <style>
+      .fondo{
+        background: #EB5757;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #000000, #EB5757);  /* Chrome 10-25, Safari 5.1-6 */
+          background: linear-gradient(to right, #000000, #EB5757); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      }
+      .text-primary {
+        --bs-text-opacity: 0.7;
+         color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
+      }
+      
+    </style>
+
+    
+  </head>
+  <body class="fondo">  
+    
+    <nav class="navbar navbar-expand-lg bg-danger  class="bg-success p-2" style="--bs-bg-opacity: .3;">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Acción</a></li>
+                <li><a class="dropdown-item" href="#">Otra acción</a></li>
+                <li><a class="dropdown-item" href="#">{{nom}}</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled">Disabled</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+      <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Objetivos</li>
+          <li class="breadcrumb-item active" aria-current="page">Direccion</li>
+          <li class="breadcrumb-item active" aria-current="page">Quienes Somos</li>
+          
+        </ol>
+      </nav>
+
+    
+      <div class="container">
+        <div class="row">
+          <h1 class="text-primary">Grupo <span class="badge bg-danger">4</span></h1>
+          {% for x in lis%}
+          <h3 class="text-secondary">{{x}}</h3>
+          {% endfor %}
+        </div>
+
+      </div>
+      
+   
+  </body>
+</html>
