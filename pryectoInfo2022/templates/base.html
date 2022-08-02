@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+    
+        {% load bootstrap5 %}
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+        {% load static %}
+
+        <style>
+          .fondo{
+            background: #FFEEEE;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #DDEFBB, #FFEEEE);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #DDEFBB, #FFEEEE); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            
+          }
+
+          .text-primary {
+            --bs-text-opacity: 0.7;
+             color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
+          
+          }
+
+          
+        </style>
+    </head>
+    <body class="fondo">
+
+        <nav class="navbar navbar-expand-lg  bg-light"  >
+        
+          <div class="container-fluid">
+              
+              
+              <img src="{% static "css/lalcec.png" %}" width="80" height="60">
+              <a class='navbar-brand' href="#">Navbar </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">NOSOTROS</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">PROGRAMAS</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">NOTICIAS</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">RED</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">DONA</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">CONTACTO</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      PROGRAMAS
+                    </a>
+                    <ul class="dropdown-menu ">
+                      <li><a class="dropdown-item" href="#">Cáncer de cuello de útero</a></li>
+                      <li><a class="dropdown-item" href="#">Cáncer de colon</a></li>
+                      <li><a class="dropdown-item" href="#">Cáncer de piel</a></li>
+                      <li><a class="dropdown-item" href="#">Cáncer de próstata</a></li>
+                      <li><a class="dropdown-item" href="#">Cáncer de mama</a></li>
+                      <li><a class="dropdown-item" href="#">Cáncer de pulmon</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled">Disabled</a>
+                  </li>
+                </ul>
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+    </body>
+</html>
