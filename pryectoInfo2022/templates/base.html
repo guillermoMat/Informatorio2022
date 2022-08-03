@@ -13,10 +13,9 @@
 
         <style>
           .fondo{
-            background: #FFEEEE;  /* fallback for old browsers */
-            background: -webkit-linear-gradient(to right, #DDEFBB, #FFEEEE);  /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to right, #DDEFBB, #FFEEEE); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-            
+              background: #A1FFCE;  /* fallback for old browsers */
+              background: -webkit-linear-gradient(to right, #FAFFD1, #A1FFCE);  /* Chrome 10-25, Safari 5.1-6 */
+              background: linear-gradient(to right, #FAFFD1, #A1FFCE); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
           }
 
           .text-primary {
@@ -25,64 +24,49 @@
           
           }
 
+         
           
         </style>
     </head>
     <body class="fondo">
 
-        <nav class="navbar navbar-expand-lg  bg-light"  >
+        <nav class="navbar navbar-expand-lg  "  >
         
-          <div class="container-fluid">
+          <div class="container-fluid" style='background-color:#D5F7BA;'>
               
               
-              <img src="{% static "css/lalcec.png" %}" width="80" height="60">
-              <a class='navbar-brand' href="#">Navbar </a>
+              <img src="{% static "img/lalcec.png" %}" width="80" height="60">
+              <a class='navbar-brand' href="#">Home</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">NOSOTROS</a>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+                <ul class="nav nav-tabs" >
+                  <li class="nav-item" >
+                    <a class="nav-link active" aria-current="page" href="#" style='background-color:#F3E91D; width: 120px;text-align: center'>Post</a>
+                  </li>
+                  <li class="nav-item" >
+                    <a class="nav-link" href="#" style='background-color:#89EE39; width: 120px;text-align: center'; >Campañas</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">PROGRAMAS</a>
+                    <a class="nav-link" href="#" style='background-color:#408B05; width: 120px;text-align: center' >Eventos</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">NOTICIAS</a>
+                    <a class="nav-link" href="#" style='background-color:#EC2ACC; width: 120px;text-align: center'>Donaciones</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">RED</a>
+                    <a class="nav-link" href="#" style='background-color:#691DEE; width: 120px;text-align: center'>Contacto</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">DONA</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">CONTACTO</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      PROGRAMAS
-                    </a>
-                    <ul class="dropdown-menu ">
-                      <li><a class="dropdown-item" href="#">Cáncer de cuello de útero</a></li>
-                      <li><a class="dropdown-item" href="#">Cáncer de colon</a></li>
-                      <li><a class="dropdown-item" href="#">Cáncer de piel</a></li>
-                      <li><a class="dropdown-item" href="#">Cáncer de próstata</a></li>
-                      <li><a class="dropdown-item" href="#">Cáncer de mama</a></li>
-                      <li><a class="dropdown-item" href="#">Cáncer de pulmon</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link disabled">Disabled</a>
+                    <a class="nav-link" href="#" style='background-color:#0E2DB9; width: 120px;text-align: center'>Contacto</a>
                   </li>
                 </ul>
-                <form class="d-flex" role="search">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+               
+                  <form class="d-flex" role="search" text-end>
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" align>
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                  </form>
+               
               </div>
             </div>
           </nav>
