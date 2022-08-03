@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.usuarios',
     # 'apps.usuarios.apps.UsuariosConfig',
+    'apps.post',
     'bootstrap5',
 ]
 
