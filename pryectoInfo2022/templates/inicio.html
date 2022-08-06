@@ -4,19 +4,26 @@
 
 
 
-  <div class="container">
     <div class="row">
-      <div class="col-3">
-        <h1 class="text-white">Grupo <span class="badge bg-danger">4</span></h1>
-      </div>
+     
+      {% comment %} {% if contextblog = 'vacio'%}
+
+        {{vacio}}
+
+      {% else %} {% endcomment %}
       <div class="col">
         <ul>
-          {% for x in lis%}
-            <li class="text-white"><h3>{{x}}</h3></li>
+          {% for x in blog%}
+            <h1><strong> {{x.titulo}} </strong></h1>
+            <h2> {{x.descripcion}} </h2>
+            <br>
+            <img src= {{x.imagen.url}} class="img-fluid img-thumbnail max-width: 100%;height: auto; " > 
+            <br>
+            {{x.contenido}}
           {% endfor %}
         </ul>
       </div>
+      {% comment %} {% endif %} {% endcomment %}
     </div>
-
-  </div>   
+  
 {%endblock%}

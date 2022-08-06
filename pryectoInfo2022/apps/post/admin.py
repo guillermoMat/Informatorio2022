@@ -1,11 +1,19 @@
 from django.contrib import admin
-from apps.usuarios.models import Usuario
+from django.utils.html import format_html
 # Register your models here.
-from apps.post.models import Categoria, Post
+from .models import Categoria, Post
 
 class AdminPost(admin.ModelAdmin):
-    list_display =   ('id','titulo','descripcion','contenido','fecha_creacion',
-                      'estado')
+    list_display =   ('id','titulo','descripcion','contenido',
+                      'activo','fecha_creacion','IMAGEN')
+    
+    
+    # def img (self):
+    #     return format_html("img src = {} />", self. )
+    def IMAGEN(self, obj):
+        return format_html('<img src="{}" style="width: 60px; \ height: 60px" />',(obj.imagen.url))
+    
+    # foto.short_description = 'foto' style="width: 30px; \ height: 30px"
     
 
 class AdminCategoria(admin.ModelAdmin):

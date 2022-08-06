@@ -10,6 +10,7 @@
         {% bootstrap_css %}
         {% bootstrap_javascript %}
         {% load static %}
+       
 
         <style>
           .fondo{
@@ -32,9 +33,9 @@
     </head>
     <body class="fondo" >
 
-        <nav class="navbar navbar-expand-lg  "  >
+        <nav class='navbar sticky-top navbar-expand-lg '  >
     
-          <div class="container-fluid" style='background-color:#F9DC9E;'>
+          <div class="container-fluid" style='background-color:#F9DC9E;opacity:0.8 '>
             
               
               
@@ -78,5 +79,17 @@
           {% endblock %}
 
     </body>
+    <footer>
+      <div class="card" style='background-color:#F9DC9E;'>
+        <div class="card-header">
+          Developers
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Integrantes</h5>
+          <p class="card-text">Copyright 2022</p>
+          
+        </div>
+      </div>
+    </footer>
 
 </html>
