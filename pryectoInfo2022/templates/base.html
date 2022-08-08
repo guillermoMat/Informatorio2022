@@ -16,18 +16,15 @@
           .fondo{
 
               font-family: 'Bahnschrift';
-              background: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("{% static 'img/circulos.png'%}");
-              background-attachment: fixed;
-              background-position: center;
-              background-size: cover;
+              background: #ADA996;  /* fallback for old browsers */
+              background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);  /* Chrome 10-25, Safari 5.1-6 */
+              background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+              
+
+              {% comment %} , url("{% static 'img/circulos.png'%}  {% endcomment %}
           }
 
-          .text-primary {
-            --bs-text-opacity: 0.3;
-             color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
           
-          }
-        
           
         </style>
     </head>
@@ -35,11 +32,10 @@
 
         <nav class='navbar sticky-top navbar-expand-lg '  >
     
-          <div class="container-fluid" style='background-color:#F9DC9E;opacity:0.8 '>
-            
+          <div class="container-fluid " style='background-color:#F99020 ; opacity:0.9;' >
+           
               
-              
-              <a class='navbar-brand' href="#" style='background-light; width: 50px;text-align: center' >HOME</a>
+              <a class='navbar-brand  text-uppercase text-expanded font-weight-bold' href="{% url 'inicio'%}" style='background-light; width: 100px;text-align: center' >LA CASITA</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -47,22 +43,22 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent" >
                 <ul class="nav nav-tabs" >
                   <li class="nav-item px-lg-1" >
-                    <a class="nav-link active" aria-current="page" href="#" style='color:black;background-color:#F3E91D; width: 120px;text-align: center'>POST</a>
+                    <a class="nav-link " aria-current="page" href="{% url 'post'%}" style='color:black;background-color:#F3E91D; width: 120px;text-align: center'>BLOG</a>
                   </li>
                   <li class="nav-item px-lg-1" >
                     <a class="nav-link " href="#"  style='background-color:#89EE39;color:black; width: 120px;text-align: center' >CAMPAÑAS</a>
                   </li>
                   <li class="nav-item px-lg-1">
-                    <a class="nav-link" href="#" style='color:black; background-color:#408B05; width: 120px;text-align: center' >EVENTOS</a>
+                    <a class="nav-link " href="#" style='color:black; background-color:#408B05; width: 120px;text-align: center' >EVENTOS</a>
                   </li>
                   <li class="nav-item px-lg-1">
-                    <a class="nav-link" href="#" style='color:black;background-color:#EC2ACC; width: 120px;text-align: center'>DONACIONES</a>
+                    <a class="nav-link active" href="#" style='color:black;background-color:#EC2ACC; width: 120px;text-align: center'>DONACIONES</a>
                   </li>
                   <li class="nav-item px-lg-1">
-                    <a class="nav-link" href="#" style='color:black;background-color:#691DEE; width: 120px;text-align: center'>SOCIOS</a>
+                    <a class="nav-link " href="#" style='color:black;background-color:#691DEE; width: 120px;text-align: center'>SOCIOS</a>
                   </li>
                   <li class="nav-item px-lg-1">
-                    <a class="nav-link" href="#" style='color:black;background-color:#0E2DB9; width: 120px;text-align: center'>CONTACTO</a>
+                    <a class="nav-link " href="#" style='color:black;background-color:#0E2DB9; width: 120px;text-align: center'>CONTACTO</a>
                   </li>
                 </ul>
                
@@ -80,12 +76,12 @@
 
     </body>
     <footer>
-      <div class="card" style='background-color:#F9DC9E;'>
+      <div class="card" style='background-color:#F99020 ;opacity:0.6;'>
         <div class="card-header">
           Developers
         </div>
-        <div class="card-body">
-          <h5 class="card-title">Integrantes</h5>
+        <div class="card-body" >
+          <h5 class="card-title">Integrantes GRUPO 5</h5>
           <p class="card-text">Copyright 2022</p>
           
         </div>

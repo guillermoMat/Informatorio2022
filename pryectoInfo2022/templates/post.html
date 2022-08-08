@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<nav class="container-xxl">
+
+    <div class="row">
+     
+      {% if not blog %}
+
+      <strong><h1 style="color:red;">{{vacio}}</h1></strong>
+
+      {% else %}
+     
+        <div class="col-8">
+          
+            <ul >
+              {% for x in blog%}
+                <h1 ><strong > {{x.titulo}} </strong></h1>
+                <h2> {{x.descripcion}} </h2>
+                <br>
+                <img src= {{x.imagen.url}} class="img-fluid img-thumbnail max-width: 100%;height: auto; " > 
+                <br>
+                {{x.contenido}}
+              {% endfor %}
+            </ul>
+        </div>
+        <div class="col-3">
+        
+            lolo
+          
+        </div>
+    
+      {% endif %}
+    </div>
+  </nav>  
+</nav>
+
+{%endblock%}
