@@ -14,7 +14,7 @@ class Date(models.Model):
         abstract = True
 
 class Categoria(Date):
-    categoria = models.CharField(max_length=15, blank=False,null=True)
+    categoria = models.CharField(max_length=30, blank=False,null=True)
     
     class Meta:
         verbose_name='categoria'

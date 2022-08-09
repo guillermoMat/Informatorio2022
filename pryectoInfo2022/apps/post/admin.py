@@ -6,7 +6,7 @@ from .models import Categoria, Post
 @admin.register(Post)
 class AdminPost(admin.ModelAdmin):
     list_display = ('id','titulo','contenido',
-                    'activo','created','updated','IMAGEN','usuario_id')
+                    'activo','created','updated','IMAGEN','usuario')
     
     readonly_fields  = ('created','updated')
     

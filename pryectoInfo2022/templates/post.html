@@ -17,7 +17,7 @@
            
               {% for x in blog%}
                 <h1 ><strong > {{x.titulo}} </strong></h1>
-                <h2> {{x.descripcion}} </h2>
+                <p> {{x.updated}} </p>
                 <br>
                 <img class="intro-img  img-fluid mb-3 mb-lg-0 rounded" src= {{x.imagen.url}} %> 
                 <br>
@@ -25,19 +25,22 @@
               {% endfor %}
            
         </div>
-        <div class="col-3">
-        
-            lolo
-          
-        </div>
-    
+  
       {% endif %}
 
-      <div style='width: 75%; margin: auto; text-align: center; color:green'>
-        Categorias: 
-        {% for x in blog %}
-        <a href='{% url 'categoria' x.categoria_id %}'> {{x.categoria}} </a> &nbsp; &nbsp; 
-        {% endfor %}
+      <div class="col-3">
+
+        {% if blog %}
+        
+          <div style='width: 75%; margin: auto; text-align: left; color:green'>
+            <p>Categorias:</p> 
+            {% for x in blog %}
+              <li>
+                <a href='{% url 'categoria' x.categoria_id %}'> {{x.categoria}} </a> &nbsp; &nbsp; 
+              </li>
+            {% endfor %}
+          </div>
+        {%endif%}
       </div>
     </div>
   </nav>  

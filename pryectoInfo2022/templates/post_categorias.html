@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+{% block title %} Blog {%endblock%}
 <nav class="container-xxl">
 
     <div class="row">
@@ -10,10 +10,11 @@
       <div class="col-8">
               
         
-        <div >CATEGORIA: {{categ}}</div> 
+        <div >CATEGORIA: {{categ}}</div>
+        
         {% for x in blog%}
           <h1 > {{x.titulo}}</h1>
-          <h2> {{x.descripcion}} </h2>
+          <p> {{x.updated}} </p>
           <br>
           <img class="intro-img  img-fluid mb-3 mb-lg-0 rounded max-width:100% height:auto;" src= {{x.imagen.url}} > 
           <br>
