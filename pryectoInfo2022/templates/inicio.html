@@ -1,19 +1,24 @@
 {% extends 'base.html' %}
 
+{%load static%}
+
 {% block content%}
+
+
 <div class="container">
-    <div class="intro">
-      {% comment %} <img src="{% static "img/lalcec.png" %}" class="intro-img  rounded"  alt=""> {% endcomment %}
-      <div class="intro-text left-0 text-center bg-faded p-5 rounded">
-        <h2 class="section-heading mb-4" >
-          <span class="section-heading-upper">Puntualidad</span>
-          <span class="section-heading-lower">El mejor stock</span>
-        </h2>
-        <p class="mb-3">En la puertra de tu casa en menos de 48 h con el envío normal. En menos de 24 h con el envío express.
-        </p>
-       
-      </div>
+  
+    <img src="{% static "img/lalcec.png" %}" class='rounded mx-auto d-block' background:>
+    <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+
+      <h2 class="section-heading mb-4" >
+        <span class="section-heading-upper">LALCEC - Chaco</span><br>
+        <span class="section-heading-lower">“Si querés cuidarte, salí de tu casa”</span>
+      </h2>
+
+      <Por class="mb-3">Todos los años mueren 60.000 personas por cáncer e Argentina. Por eso cuidarte del cáncer tambien es actividad escencial.</p>
+      <p>Enterate más entrando al www.</p>
     </div>
+    
   </div>
 </section>
 

@@ -14,16 +14,16 @@
      
         <div class="col-8">
           
-            <ul >
+           
               {% for x in blog%}
                 <h1 ><strong > {{x.titulo}} </strong></h1>
                 <h2> {{x.descripcion}} </h2>
                 <br>
-                <img src= {{x.imagen.url}} class="img-fluid img-thumbnail max-width: 100%;height: auto; " > 
+                <img class="intro-img  img-fluid mb-3 mb-lg-0 rounded" src= {{x.imagen.url}} %> 
                 <br>
                 {{x.contenido}}
               {% endfor %}
-            </ul>
+           
         </div>
         <div class="col-3">
         
@@ -32,6 +32,13 @@
         </div>
     
       {% endif %}
+
+      <div style='width: 75%; margin: auto; text-align: center; color:green'>
+        Categorias: 
+        {% for x in blog %}
+        <a href='{% url 'categoria' x.categoria_id %}'> {{x.categoria}} </a> &nbsp; &nbsp; 
+        {% endfor %}
+      </div>
     </div>
   </nav>  
 </nav>

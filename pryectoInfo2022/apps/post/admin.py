@@ -5,14 +5,14 @@ from .models import Categoria, Post
 
 @admin.register(Post)
 class AdminPost(admin.ModelAdmin):
-    list_display = ('id','titulo','descripcion','contenido',
-                    'activo','fecha_creation','IMAGEN','usuario_id')
+    list_display = ('id','titulo','contenido',
+                    'activo','created','updated','IMAGEN','usuario_id')
     
-    readonly_fields  = ('fecha_creation','fecha_update')
+    readonly_fields  = ('created','updated')
     
     search_fields = ('titulo','descripcion')
     
-    # list_filter = ('fecha_creation','usuario_id')
+    # list_filter = ('created','usuario_id')
     def IMAGEN(self, obj):
         return format_html('<img src="{}" style="width: 100px; \ height: 100px" />',(obj.imagen.url))
     
@@ -21,7 +21,7 @@ class AdminPost(admin.ModelAdmin):
 
 class AdminCategoria(admin.ModelAdmin):
     list_display =   ('id','categoria')
-
+    readonly_fields  = ('created','updated')
 
 # admin.site.register(Post,AdminPost)
 admin.site.register(Categoria,AdminCategoria)
