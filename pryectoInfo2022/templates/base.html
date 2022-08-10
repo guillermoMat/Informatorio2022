@@ -23,20 +23,23 @@
 
               {% comment %} , url("{% static 'img/circulos.png'%}  {% endcomment %}
           }
-          @import "../node_modules/bootstrap/scss/maps";
-     
-      
+          .borde{
+            border-right:0;
+            border-left:0;
+
+          }
+          
         </style>
     </head>
     <body class="fondo">
      
 
-        <nav class='navbar sticky-top navbar-expand-lg' style='background-color:#F99020 ; opacity:0.7;'  >
+        <nav class='navbar sticky-top navbar-expand-lg' style='background-color:grey ; opacity:0.9;'  >
     
           <div class="container-fluid " >
             
-            <img src="{% static "img/lalcec.png" %}" width="90" height="60">
-              <a class='navbar-brand  text-uppercase text-expanded font-weight-bold' href="{% url 'inicio'%}" style='background-light; width: 100px;text-align=center;' >LA CASITA</a>
+            <img src="{% static "img/lalcec2.png" %}" width="90" height="80">
+              <a class="btn btn-light;" href="{% url 'inicio'%}" style='background-light; width: 100px;text-align=center;' ><img src="{% static "img/LaCasita2.png" %}" width="80" height="80" ;image-align:center></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -44,22 +47,22 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent" >
                 <ul class="nav nav-tabs" >
                   <li class="nav-item px-lg-1" >
-                    <a class="nav-link " aria-current="page" href="{% url 'post'%}" style='color:black;background-color:#F3E91D; width: 120px;text-align: center'>BLOG</a>
+                    <a class="nav-link " aria-current="page" href="{% url 'post'%}" style='background-color:transparent; width: 120px;text-align: center'>BLOG</a>
                   </li>
                   <li class="nav-item px-lg-1" >
                     <a class="nav-link " href="#"  style='background-color:transparent;color:black; width: 120px;text-align: center'>CAMPAÑAS</a>
                   </li>
                   <li class="nav-item px-lg-1">
-                    <a class="nav-link" href="#" style='color:black; background-color:#408B05; width: 120px;text-align: center' >EVENTOS</a>
+                    <a class="nav-link" href="#" style='color:black; background-color: transparent; width: 120px;text-align: center' >EVENTOS</a>
                   </li>
                   <li class="nav-item px-lg-1">
-                    <a class="nav-link active" href="#" style='color:black;background-color:#EC2ACC; width: 120px;text-align: center'>DONACIONES</a>
+                    <a class="nav-link" href="#" style='color:black;background-color:transparent; width: 120px;text-align: center'>DONACIONES</a>
                   </li>
                   <li class="nav-item px-lg-1">
-                    <a class="nav-link " href="#" style='color:black;background-color:#691DEE; width: 120px;text-align: center'>SOCIOS</a>
+                    <a class="nav-link " href="#" style='color:black;background-color:transparent; width: 120px;text-align: center'>SOCIOS</a>
                   </li>
                   <li class="nav-item px-lg-1">
-                    <a class="nav-link " href="#" style='color:black;background-color:#0E2DB9; width: 120px;text-align: center'>CONTACTO</a>
+                    <a class="nav-link " href="#" style='color:black;background-color:transparent; width: 120px;text-align: center'>CONTACTO</a>
                   </li>
                 </ul>
                
