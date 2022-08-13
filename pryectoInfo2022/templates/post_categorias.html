@@ -17,9 +17,11 @@
         {% for x in blog%}
           <h1 > {{x.titulo}}</h1>
           <p> {{x.updated}} </p>
+          {% if x.imagen %}
           <br>
           <img class="intro-img  img-fluid mb-3 mb-lg-0 rounded max-width:100% height:auto;" src= {{x.imagen.url}} > 
           <br>
+          {% endif %}
           {{x.contenido}}
         {% endfor %}
       

@@ -14,8 +14,10 @@ class AdminPost(admin.ModelAdmin):
     
     # list_filter = ('created','usuario_id')
     def IMAGEN(self, obj):
-        return format_html('<img src="{}" style="width: 100px; \ height: 100px" />',(obj.imagen.url))
-    
+        if obj.imagen:
+            return format_html('<img src="{}" style="width: 100px; \ height: 100px" />',(obj.imagen.url))
+        else:
+            return ''
     
     
 
