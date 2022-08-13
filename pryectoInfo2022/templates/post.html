@@ -26,9 +26,15 @@
                 <br>
                 {% endif %}
                 {{x.contenido}}
+                <!-- facebook -->
+                <br>
+        {% comment %} }       <div class="fb-like" data-href="/127.0.0.1:8000/post/{{x}}" data-width="" data-layout="standard" data-action="like" data-size="large" data-share="false"></div> {% endcomment %}
+                <div class="fb-comments" data-href="/127.0.0.1:8000/post/{{x}}"  data-width="" data-numposts="3"></div>
+                <!-- facebook -->
+
               {% endfor %}
-           
-        </div>
+
+         </div>
   
       {% endif %}
 
