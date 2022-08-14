@@ -4,7 +4,7 @@
 {% block title %} Blog {%endblock%}
 {% block content %}
 
-<nav class="container-xxl">
+<nav class="container-fluid">
 
     <div class="row">
      
@@ -14,8 +14,10 @@
 
       {% else %}
      
-        <div class="col-8">
+        <div class="col-10" > 
           
+          <div class="container " style="background-color: snow">
+            
            
               {% for x in blog%}
                 <h1 ><strong > {{x.titulo}} </strong></h1>
@@ -33,24 +35,26 @@
                 <!-- facebook -->
 
               {% endfor %}
-
+            
+          </div>
          </div>
   
       {% endif %}
 
-      <div class="col-3">
-
-        {% if blog %}
-        
-          <div style='width: 75%; margin: auto; text-align: left; color:green'>
-            <p>Categorias:</p> 
-            {% for x in blog %}
-              <li>
-                <a href='{% url 'categoria' x.categoria_id %}'> {{x.categoria}} </a> &nbsp; &nbsp; 
-              </li>
-            {% endfor %}
+      <div class="col-2 ">
+       <div class="container">
+          {% if blog %}
+          
+            <div style='width: 75%; margin: auto; text-align: left; color:green'>
+              <p>Categorias:</p> 
+                {% for x in blog %}
+                  <li >
+                    <a href='{% url 'categoria' x.categoria_id %}'> {{x.categoria}} </a> &nbsp; &nbsp; 
+                  </li>
+                {% endfor %}
+            </div>
+          {%endif%}
           </div>
-        {%endif%}
       </div>
     </div>
   </nav>  

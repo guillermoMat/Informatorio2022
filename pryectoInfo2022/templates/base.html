@@ -1,91 +1,76 @@
 <!DOCTYPE html>
 
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>{% block title %}  {%endblock%}</title>
-    
-        {% load bootstrap5 %}
-        {% bootstrap_css %}
-        {% bootstrap_javascript %}
-        {% load static %}
-       
+<html lang="es">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>{% block title %}  {%endblock%}</title>
 
-        <style>
-          .fondo{
+      {% load bootstrap5 %}
+      {% bootstrap_css %}
+      {% bootstrap_javascript %}
+      {% load static %}
+      
 
-              font-family: 'Bahnschrift';
-              background: #ADA996;  /* fallback for old browsers */
-              background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);  /* Chrome 10-25, Safari 5.1-6 */
-              background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-              
-             
-              {% comment %} , url("{% static 'img/circulos.png'%}  {% endcomment %}
-          }
-          .borde{
-            border-right:0;
-            border-left:0;
-
-          }
-          
-        </style>
-       
-    </head>
-    <body class="fondo">
+      <link rel="stylesheet" href="{% static "css/estilos.css" %}">
+  </head>
+  
+  <body class="fondo">
       <!-- faccebook -->
-      <div id="fb-root"></div>
       <div id="fb-root"></div>
       <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v14.0" nonce="KNIfzx54"></script>
       <!-- faccebook -->
-
-        <nav class='navbar sticky-top navbar-expand-lg' style='background-color:grey ; opacity:0.9;'  >
-    
-          <div class="container-fluid " >
-            
-            <img src="{% static "img/lalcec2.png" %}" width="90" height="80">
-              <a class="btn btn-light;" href="{% url 'inicio'%}" style='background-light; width: 100px;text-align=center;' ><img src="{% static "img/LaCasita2.png" %}" width="80" height="80" ;image-align:center></a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
+      <div class="navbar navbar-dark bg-dark npm ">
+        
+      </div>
+        <nav class='navbar  sticky-top navbar-expand-lg ' style="background-color:#d88d1d; opacity:0.8">
+          
+          <nav class="container-fluid  ">
+           
+              <span><img src="{% static "img/lalcec2.png" %}" width="90" height="80"></span>
+              <a class="btn btn-light;" href="{% url 'inicio'%}"><img src="{% static "img/LaCasita2.png" %}" width="80" height="80" ;image-align:center></a>
               
-              <div class="collapse navbar-collapse" id="navbarSupportedContent" >
-                <ul class="nav nav-tabs" >
-                  <li class="nav-item px-lg-1" >
-                    <a class="nav-link " aria-current="page" href="{% url 'post'%}" style='background-color:transparent; width: 120px;text-align: center'>BLOG</a>
+              <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center ">
+                  <li class="nav-item" >
+                    <a class="nav-link"  href="{% url 'post'%}" style='text-align: center'>BLOG</a>
                   </li>
-                  <li class="nav-item px-lg-1" >
-                    <a class="nav-link " href="#"  style='background-color:transparent;color:black; width: 120px;text-align: center'>CAMPAÑAS</a>
+                  <li class="nav-item" >
+                    <a class="nav-link "  href="#"  style='text-align: center'>CAMPAÑAS</a>
                   </li>
-                  <li class="nav-item px-lg-1">
-                    <a class="nav-link" href="#" style='color:black; background-color: transparent; width: 120px;text-align: center' >EVENTOS</a>
-                  </li>
-                  <li class="nav-item px-lg-1">
-                    <a class="nav-link" href="#" style='color:black;background-color:transparent; width: 120px;text-align: center'>DONACIONES</a>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" style='text-align: center' >EVENTOS</a>
                   </li>
                   <li class="nav-item px-lg-1">
-                    <a class="nav-link " href="#" style='color:black;background-color:transparent; width: 120px;text-align: center'>SOCIOS</a>
+                    <a class="nav-link" href="#" style='text-align: center'>DONACIONES</a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link " href="#" style='text-align: center'>SOCIOS</a>
                   </li>
                   <li class="nav-item px-lg-1">
-                    <a class="nav-link " href="{% url 'contacto' %}" style='color:black;background-color:transparent; width: 120px;text-align: center'>CONTACTO</a>
+                    <a class="nav-link " href="{% url 'contacto' %}" style='text-align: center'>CONTACTO</a>
                   </li>
+                  
                 </ul>
                
-                  {% comment %} <form class="d-flex" role="search" text-end>
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" align>
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                  </form> {% endcomment %}
-               
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center >
+                  <li class="nav-item px-lg-1">
+                    <a class="nav-link" href="#" style='text-align: center'>CONTACTO</a>
+                  </li>
+                </ul>
+              
               </div>
-           
+              
           </div>
-        </nav>
-
-          {%block content%}
-          {% endblock %}
-
-    </body>
-    <footer>
+        
+        </nav >
+      </nav>
+        {%block content%}
+        {% endblock %}
+   
+  </body>
+  <footer>
       <div class="card" style='background-color:#F99020 ;opacity:0.6;'>
         <div class="card-header">
           Developers
@@ -96,6 +81,6 @@
           
         </div>
       </div>
-    </footer>
+  </footer>
 
 </html>
