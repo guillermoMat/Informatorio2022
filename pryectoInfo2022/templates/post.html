@@ -15,29 +15,37 @@
       {% else %}
      
         <div class="col-10" > 
+          <script async="false" type="text/javascript" src="chrome-extension://fnjhmkhhmkbjkkabndcnnogagogbneec/in-page.js"></script>
+          <link type="text/css" id="dark-mode" rel="stylesheet" href="">
           
-          <div class="container " style="background-color: snow">
-            
-           
-              {% for x in blog%}
-                <h1 ><strong > {{x.titulo}} </strong></h1>
-                <p> {{x.updated}} </p>
-                {% if x.imagen %}
-                <br>
-                  <img class="intro-img img-fluid mb-3 mb-lg-0 rounded  max-width:100% height:auto;" src= {{x.imagen.url}} > 
-                <br>
-                {% endif %}
-                {{x.contenido}}
-                <!-- facebook -->
-                <br>
-        {% comment %} }       <div class="fb-like" data-href="/127.0.0.1:8000/post/{{x}}" data-width="" data-layout="standard" data-action="like" data-size="large" data-share="false"></div> {% endcomment %}
-                <div class="fb-comments" data-href="/127.0.0.1:8000/post/{{x}}"  data-width="" data-numposts="3"></div>
-                <!-- facebook -->
-
-              {% endfor %}
-            
+          <div class="album py-5 bg-light">
+              <div class="container">
+                  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                      {% for x in blog%}
+                          <div class="col">
+                              <div class="card shadow-sm">
+                                  {% if x.imagen %}
+                                  
+                                    <img class="card-img-top" src="{{x.imagen.url}}" alt="Card image cap" width="400px" height="400px">
+                                  
+                                  {% endif %}
+                                  <div class="card-body">
+                                      <h3 ><strong > {{x.titulo}} </strong></h3>
+                                      <p class="card-text">{{x.contenido}}</p>
+                                      <div class="d-flex justify-content-between align-items-center">
+                                          <small class="text-muted"><p> {{x.updated}} </p></small>
+                                      </div>
+                                      <br>
+                                        {% comment %} }<div class="fb-like" data-href="/127.0.0.1:8000/post/{{x}}" data-width="auto" data-layout="standard" data-action="like" data-size="large" data-share="false"></div> {% endcomment %}
+                                      <div class="fb-comments" data-href="/127.0.0.1:8000/post/{{x}}"  data-width="auto" data-numposts="3"></div>
+                                  </div>
+                              </div>
+                          </div>
+                      {% endfor %}
+                  </div>
+              </div>
           </div>
-         </div>
+        </div>
   
       {% endif %}
 
