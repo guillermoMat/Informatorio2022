@@ -6,12 +6,16 @@ from apps.post.models import Post,Categoria
 def post(request):
     
     post = Post.objects.filter(activo=True)
+    cat = {}
     if post :
-        context = {'blog':post}
+        for x in post:
+         
+                cat[x.categoria] = x.categoria_id
+        
+        context = {'blog':post, 'cat':cat}
     else:
         context = {'vacio':'No hay blogs disponibes'}
-    # nombre = "Nestor Acevedo"
-    # lista = ["Acevedo","Alegre","Alvarin","Alvarez","Busi","Echavarria","Mathieu","Salcedo","Sotelo"]
+
     return render(request,'post.html', context)
     
 def categorias(request,categoria):

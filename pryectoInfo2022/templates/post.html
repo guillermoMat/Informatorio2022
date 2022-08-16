@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 
-{%load static%}
+{% load static%}
 {% block title %} Blog {%endblock%}
 {% block content %}
 
 <nav class="container-fluid">
-
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v14.0" nonce="KNIfzx54"></script>
     <div class="row">
      
       {% if not blog %}
@@ -16,11 +16,11 @@
      
         <div class="col-10" > 
           
-          <div class="container " style="background-color: snow">
+          <div class="container fluid" style="background-color: light">
             
            
               {% for x in blog%}
-                <h1 ><strong > {{x.titulo}} </strong></h1>
+                <h2 class="border-end:1 "><strong > {{x.titulo}} </strong></h2>
                 <p> {{x.updated}} </p>
                 {% if x.imagen %}
                 <br>
@@ -42,16 +42,26 @@
       {% endif %}
 
       <div class="col-2 ">
-       <div class="container">
+       <div class="container fluid sticky-top" >
           {% if blog %}
           
-            <div style='width: 75%; margin: auto; text-align: left; color:green'>
-              <p>Categorias:</p> 
-                {% for x in blog %}
-                  <li >
-                    <a href='{% url 'categoria' x.categoria_id %}'> {{x.categoria}} </a> &nbsp; &nbsp; 
-                  </li>
+            <div style='width: 75%; margin: auto; text-align: left; color:green' class="overflow-visible">
+              <p >Categorias:</p> 
+           
+              <div class="d-grid gap-2 col-6 mx-auto">
+                <a class="btn btn-success""  href="{% url 'post'  %}" role="button">Todos</a>
+             
+                {% comment %} <a href='{% url 'post'  %}'>Todos</a> &nbsp; &nbsp; {% endcomment %}
+              
+                {% for c, x in cat.items %}
+                
+                <a class="btn btn-success" href="{% url 'categoria' x %}" role="button">{{c}}</a>
+            
+                   
+                
+              
                 {% endfor %}
+                </div
             </div>
           {%endif%}
           </div>
