@@ -52,9 +52,7 @@
                   <li class="nav-item ">
                     <a class="nav-link " href="#" style='text-align: center'>PROFESIONALES</a>
                   </li>
-                  <li class="nav-item px-lg-1">
-                    <a class="nav-link " href="{% url 'contacto' %}" style='text-align: center'>CONTACTO</a>
-                  </li>
+                 
                   
                 </ul>
                
@@ -87,20 +85,31 @@
                       <small class="d-lg-none ms-2">Facebook</small>
                     </a>
                   </li>
+                  
                   <!-- Iconos de paginas sociales y contacto -->
+                  <li class="nav-item " >
+                  
+                      {% if user.is_authenticated %}
+                        <span >{{ user.username }}</span>
+                        <a href="{% url 'logout' %}">LOGOUT</a>
+                      {% else %}
+                        <a href="{% url 'login' %}">LOGUIN</a>
+                      {% endif %}
+               
+                  </li>
                 </ul>
-              
+             
+
               </div>
               
             </nav>
-            <nav class="container-fluid mb-3 mb-lg-0 ">
+           
+            <div class="container-fluid mb-3 mb-lg-0 ">
            
               <span><img src="{% static "img/lalcec_logo.jpg" %}" width="90" height="80" class="rounded-circle" ></span>
               <a class="btn btn-light;" href="{% url 'inicio'%}"><img src="{% static "img/LaCasita2.png"%}" width="80" height="80" ;image-align:center></a>
-              
-          
-
-         </nav >
+            
+             </div>
       
     </header>
    
