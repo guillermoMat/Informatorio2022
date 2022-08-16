@@ -9,14 +9,13 @@ def post(request):
     cat = {}
     if post :
         for x in post:
-         
-                cat[x.categoria] = x.categoria_id
+            cat[x.categoria] = x.categoria_id
         
         context = {'blog':post, 'cat':cat}
     else:
         context = {'vacio':'No hay blogs disponibes'}
 
-    return render(request,'post.html', context)
+    return render(request,'post_blog.html', context)
     
 def categorias(request,categoria):
     cat = Categoria.objects.get(id=categoria)
