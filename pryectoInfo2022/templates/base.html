@@ -7,7 +7,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>{% block title %}  {%endblock%}</title>
       {% load static %}
-    
+     <!-- Font-Awesome -->
+      <link rel=stylesheet href:"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
       <link rel=stylesheet   TYPE="text/css"  href="{% static "css/estilos.css" %}">
       {% load bootstrap5 %}
 
@@ -32,7 +33,7 @@
     <header class="header">
       <div class="titulo">
         Liga Argentina de Lucha Contra el Cáncer
-      </div>  
+             </div>
       <nav class='navbar navbar-expand-sm  navbar-dark sticked-top'>
        
                  
@@ -119,11 +120,11 @@
                         {% if user.is_authenticated %}
             
                         <span style="color:white" class="mx-3">{{ user.username }}</span>
-                        <a name="" id="" class="btn btn-outline-dark btn-sm " href="{% url 'logout' %}" role="button">LOGOUT</a> 
+                        <a name="" id="" class="btn btn-outline-dark btn-sm " href="{% url 'logout' %}" role="button"><i class="fa-thin fa-user"></i>LOGOUT</a> 
                         
                         {% else %}
                         
-                        <a name="" id="" class="btn btn-outline-dark btn-sm " href="{% url 'login' %}" role="button">LOGUIN</a> 
+                        <a name="" id="" class="btn btn-outline-dark btn-sm " href="{% url 'login' %}" role="button">LOGUIN<i class="fa-thin fa-user"></i></a> 
                                 
                         
                         
