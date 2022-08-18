@@ -28,6 +28,7 @@ urlpatterns = [
     path('contacto/',include('apps.contacto.urls')),
     path('login/',auth.LoginView.as_view(template_name='usuarios/login.html'),name='login'),
     path('logout/',auth.LogoutView.as_view(),name='logout'),
+    path('campanias/',views.campañas,name='campanias'),
    
 ]
 

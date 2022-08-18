@@ -4,19 +4,16 @@
 
 
 
-<form method="POST">{% csrf_token %}
+  <form method="POST">{% csrf_token %}
 
     {{form.errors}}
     <input type="text" name="username" placeholder="USUARIO">
     <input type="password" name="password" placeholder="CONTRASEÑA">
 
-    <input type="submit" name"" value="LOGIN">
+    <input type="submit" name"" value="LOGUIN">
 
+    </form>  
+    
+    
+{% endblock %} 
 
-
-</form> 
-
-
-
-
-{% endblock content %}
