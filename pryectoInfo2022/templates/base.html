@@ -30,7 +30,9 @@
   <body class="fondo">
  
     <header class="header">
-  
+      <div class="titulo">
+        Liga Argentina de Lucha Contra el Cáncer
+      </div>  
       <nav class='navbar navbar-expand-sm  navbar-dark sticked-top'>
        
                  
@@ -39,7 +41,7 @@
         <div class="container-md" > 
           
           <ul class="navbar-nav ml-auto">
-            <img src="{% static "img/lalcec_logo.jpg" %}" width="90" height="80" class="rounded-circle" >
+            <img src="{% static "img/lalcec_logo.jpg" %}" width="75" height="75" class="rounded-circle" >
             <a class="navbar-brand" href="{% url 'inicio'%}">
               <img src="{% static "img/LaCasita2.png"%}" width="80" height="80">
             </a>
@@ -60,7 +62,7 @@
                 <a class="nav-link font-1"  href="#">DONACIONES</a>
               </li>
               <li class="nav-item mx-auto">
-                <a class="nav-link font-1" href="#" >SOCIOS</a>
+                <a class="nav-link font-1" href="{% url 'mision'%}" >MISION</a>
               </li>
               <li class="nav-item mx-auto">
                 <a class="nav-link font-1" href="#" >PROFESIONALES</a>
@@ -129,9 +131,7 @@
                       </li>
                     </ul> 
 
-    
-         
-                
+                           
                 
               
         </div>
@@ -156,7 +156,7 @@
           Developers
         </div>
         <div class="card-body" >
-          <h5 class="card-title">Integrantes GRUPO 5</h5>
+          <h5 class="card-title">Integrantes GRUPO 4</h5>
           <p class="card-text">Copyright 2022</p>
           
         </div>

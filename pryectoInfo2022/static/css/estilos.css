@@ -20,6 +20,7 @@ sticky-top2 {
 
 .font-1{
     font-size: small;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .carousel-inner img {
@@ -28,7 +29,15 @@ sticky-top2 {
   }
 
 .navbar {
-    background-color: rgb(138, 51, 1) !important; 
+    background-color: rgb(233, 100, 76) !important; 
     
    
+}
+
+.titulo{
+
+    background: white;
+    font-size: small;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: oblique;
 }

@@ -7,3 +7,6 @@ def inicio(request):
 
 def campañas(request):
     return render(request,'campanias.html')
+
+def mision(request):
+    return render(request,'mision.html')
