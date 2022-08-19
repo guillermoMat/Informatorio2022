@@ -7,6 +7,7 @@ body {
   }
 .navbar{
     font-family: sans-serif;
+    
 }
 
 .sticky-top2 {
@@ -19,6 +20,7 @@ body {
 .font-1{
     font-size: small;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+
 }
 
 .carousel-inner img {
@@ -38,15 +40,3 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-style: oblique;
 }
-
-.contenedorLogin{
-    background-color: rgb(207, 136, 49);
-    width: 25%;
-    margin: 10px auto;
-    border-radius: 5px;
-    padding: 1px 0px;
-}
-
-.footer {
-    background-color: rgba(241, 190, 79, 0.8);
- }
