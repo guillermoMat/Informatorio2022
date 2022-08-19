@@ -7,7 +7,7 @@ body {
   }
 .navbar{
     font-family: sans-serif;
-    
+    background-color: rgba(243, 133, 16,0.8); 
 }
 
 .sticky-top2 {
@@ -28,10 +28,6 @@ body {
     height: 100%;
   }
 
-.navbar {
-    background-color: rgb(233, 100, 76) !important; 
-    
-}
 
 .titulo{
 
@@ -42,16 +38,14 @@ body {
 }
 
 .contenedorLogin{
-
-
-    background-color: rgb(197, 148, 43);
-margin: 10px auto;
-width: 25%;
-border-radius: 5px;
-padding: 1px 0px;
+    background-color: rgb(243, 133, 16);
+    margin: 10px auto;
+    width: 25%;
+    border-radius: 5px;
+    padding: 1px 0px;
 
 }
 
 .footer {
-    background-color:  rgb(233, 100, 76) ; 
+    background-color:  rgba(243, 133, 16,0.8) ; 
  }
