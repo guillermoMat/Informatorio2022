@@ -40,3 +40,18 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-style: oblique;
 }
+
+.contenedorLogin{
+
+
+    background-color: rgb(197, 148, 43);
+margin: 10px auto;
+width: 25%;
+border-radius: 5px;
+padding: 1px 0px;
+
+}
+
+.footer {
+    background-color:  rgb(233, 100, 76) ; 
+ }
