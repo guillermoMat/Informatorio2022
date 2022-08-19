@@ -6,68 +6,66 @@
 
 <nav class="container-fluid">
   <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v14.0" nonce="KNIfzx54"></script>
-    <div class="row">
+  <div class="row row-cols-2">
      
-      {% if not blog %}
+    {% if not blog %}
 
-      <strong><h1 style="color:red;">{{vacio}}</h1></strong>
+    <strong><h1 style="color:red;">{{vacio}}</h1></strong>
 
-      {% else %}
+    {% else %}
      
-        <div class="col-10" > 
-          
-          <div class="container fluid" style="background-color: light">
-            
+      <div class="col-10">   
+        <nav class="container fluid" style="background-color: light">
+  
            
-              {% for x in blog%}
-                <h2 class="border-end:1 "><strong > {{x.titulo}} </strong></h2>
-                <p> {{x.updated}} </p>
-                {% if x.imagen %}
-                <br>
-                  <img class="intro-img img-fluid mb-3 mb-lg-0 rounded  max-width:100% height:auto;" src= {{x.imagen.url}} > 
-                <br>
-                {% endif %}
-                {{x.contenido}}
-                <!-- facebook -->
-                <br>
-        {% comment %} }       <div class="fb-like" data-href="/127.0.0.1:8000/post/{{x}}" data-width="" data-layout="standard" data-action="like" data-size="large" data-share="false"></div> {% endcomment %}
-                <div class="fb-comments" data-href="/127.0.0.1:8000/post/{{x}}"  data-width="" data-numposts="3"></div>
-                <!-- facebook -->
+          {% for x in blog%}
+            <div class="container ">
+
+              <h2 class="border-end:1 "><strong > {{x.titulo}} </strong></h2>
+              <p> {{x.updated}} </p>
+
+              {% if x.imagen %}
+           
+              <br>
+                <img class="intro-img img-fluid mb-3 mb-lg-1 rounded  max-width:50% height:50%%;" src= {{x.imagen.url}} > 
+              <br>
+             
+              {% endif %}
+
+              {{x.contenido}}
+              <!-- facebook -->
+              <br>
+                {% comment %} }       <div class="fb-like" data-href="/127.0.0.1:8000/post/{{x}}" data-width="" data-layout="standard" data-action="like" data-size="large" data-share="false"></div> {% endcomment %}
+              <div class="fb-comments" data-href="/127.0.0.1:8000/post/{{x}}"  data-width="" data-numposts="3"></div>
+                  <!-- fin facebook -->
 
               {% endfor %}
-            
-          </div>
-         </div>
-  
-      {% endif %}
+            </div>
 
-      <div class="col-2 ">
-       <div class="container fluid  sticky-top2" >
-          {% if blog %}
-          
-            <div style='width: 75%; margin: auto; text-align: left; color:green' class="overflow-visible">
-              <p >Categorias:</p> 
+        </nav>
+      </div>
+  
+      <div class="col-2"  style="position:right;">
+      
+          <div style='width: 75%; margin-align: right; text-align: left; color:green' >
+            <p >Categorias:</p> 
            
-              <div class="d-grid gap-2 col-6 mx-auto">
-                <a class="btn btn-success"  href="{% url 'post'  %}" role="button">Todos</a>
+            <div class="d-grid gap-2 col-7 mx-auto">
+               <a class="btn btn-success"  href="{% url 'post'  %}" role="button">Todos</a>
              
                 {% comment %} <a href='{% url 'post'  %}'>Todos</a> &nbsp; &nbsp; {% endcomment %}
               
-                {% for c, x in cat.items %}
+              {% for c, x in cat.items %}
                 
-                <a class="btn btn-success" href="{% url 'categoria' x %}" role="button">{{c}}</a>
+              <a class="btn btn-success" href="{% url 'categoria' x %}" role="button">{{c}}</a>
+           
+              {% endfor %}
+             </div
+           </div>
             
-                   
-                
-              
-                {% endfor %}
-                </div
-            </div>
-          {%endif%}
-          </div>
-      </div>
-    </div>
-  </nav>  
+        </div>
+      {% endif %}
+  </div>
 </nav>
 
 {%endblock%}

@@ -1,17 +1,15 @@
-.fondo {
-
-   
-    background: #FFEFBA;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #FFFFFF, #FFEFBA);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #FFFFFF, #FFEFBA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
-}
-
+body {
+    font-family: 'Lora';
+    background: linear-gradient(rgba(224, 217, 214, 0.65), rgba(243, 130, 99, 0.5)), url("../img/fondoLalcec.webp");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+  }
 .navbar{
     font-family: sans-serif;
 }
 
-sticky-top2 {
+.sticky-top2 {
     position: -webkit-sticky;
     position: sticky;
     top: 58 ;
@@ -31,7 +29,6 @@ sticky-top2 {
 .navbar {
     background-color: rgb(233, 100, 76) !important; 
     
-   
 }
 
 .titulo{
@@ -41,3 +38,15 @@ sticky-top2 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-style: oblique;
 }
+
+.contenedorLogin{
+    background-color: rgb(207, 136, 49);
+    width: 25%;
+    margin: 10px auto;
+    border-radius: 5px;
+    padding: 1px 0px;
+}
+
+.footer {
+    background-color: rgba(241, 190, 79, 0.8);
+ }

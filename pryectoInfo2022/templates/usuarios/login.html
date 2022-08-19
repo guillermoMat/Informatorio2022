@@ -2,18 +2,20 @@
 
 {% block content %}
 
+<div class="contenedorLogin">
+  <form method="POST" style="text-align:center;margin: 20px auto">{% csrf_token %}
+ 
+     
+      <input type="text" name="username" placeholder="USUARIO">
+      <br><br>
+      <input type="password" name="password" placeholder="CONTRASEÑA">
+      <br><br>
+      <input type="submit" name"" value="LOGUIN">
+   
+    </form>   
 
-
-  <form method="POST">{% csrf_token %}
-
-    {{form.errors}}
-    <input type="text" name="username" placeholder="USUARIO">
-    <input type="password" name="password" placeholder="CONTRASEÑA">
-
-    <input type="submit" name"" value="LOGUIN">
-
-    </form>  
-    
+  </div>
+  {{form.errors}}
     
 {% endblock %} 
 
