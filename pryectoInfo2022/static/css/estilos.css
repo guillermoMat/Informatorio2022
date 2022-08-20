@@ -11,7 +11,7 @@ body {
 }
 
 .sticky-top2 {
-    position: -webkit-sticky;
+   
     position: sticky;
     top: 58 ;
     z-index: 1020;

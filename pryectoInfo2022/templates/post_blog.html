@@ -15,12 +15,11 @@
     {% else %}
      
       <div class="col-10">   
-        <nav class="container fluid" style="background-color: light">
+        <nav class="container fluid" style="background-color: rgba(225, 215, 205 , 0.65);">
   
            
           {% for x in blog%}
-            <div class="container ">
-
+            
               <h2 class="border-end:1 "><strong > {{x.titulo}} </strong></h2>
               <p> {{x.updated}} </p>
 
@@ -40,31 +39,41 @@
                   <!-- fin facebook -->
 
               {% endfor %}
-            </div>
+         
 
         </nav>
       </div>
   
-      <div class="col-2 float-end"  style="position:right;">
-      
+      <div class="col-2 "  >
+        <nav class="container position-fixed">
           <div style='width: 75%; margin-align: right; text-align: left; color:green' >
             <p >Categorias:</p> 
            
-            <div class="d-grid gap-2 col-7 mx-auto">
-               <a class="btn btn-success"  href="{% url 'post'  %}" role="button">Todos</a>
+            {% comment %} <div class="class="btn-group-vertical" role="group" aria-label="Vertical button group" !important>
+               <a type="button" class="btn btn-dark"  href="{% url 'post'  %}" >Todos</a>
              
-                {% comment %} <a href='{% url 'post'  %}'>Todos</a> &nbsp; &nbsp; {% endcomment %}
+               
               
               {% for c, x in cat.items %}
                 
-              <a class="btn btn-success" href="{% url 'categoria' x %}" role="button">{{c}}</a>
+              <a type="button" class="btn btn-dark" href="{% url 'categoria' x %}">{{c}}</a>
            
               {% endfor %}
-             </div
+            </div> {% endcomment %}
+
+            <div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
+              <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio1" autocomplete="off">
+              <label class="btn btn-outline-success"  for="vbtn-radio1">Radio 1</label>
+              <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio2" autocomplete="off">
+              <label class="btn btn-outline-success" for="vbtn-radio2">Radio 2</label>
+              <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
+              <label class="btn btn-outline-success" for="vbtn-radio3">Radio 3</label>
+            </div>
+
            </div>
-            
-        </div>
-      {% endif %}
+        </nav>    
+      </div>
+    {% endif %}
   </div>
 </nav>
 

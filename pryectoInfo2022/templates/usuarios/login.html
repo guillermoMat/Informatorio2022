@@ -30,8 +30,8 @@
         {% elif field.name == "password" %}
         <p>CONTRASEÑA: {{  error }}</p>
         {% else %}
-        <p> {{  form.errors }} </p>
-       
+        <p> {{  messages }} </p>
+        {% endif %}
         {% endfor %}
       {% endfor %}
     {% endif %}
