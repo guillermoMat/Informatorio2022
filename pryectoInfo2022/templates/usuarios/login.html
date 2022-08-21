@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 
+
 {% block content %}
+
 
 <div class="contenedorLogin">
   <form method="POST" style="text-align:center;margin: 20px auto">{% csrf_token %}
@@ -15,13 +17,13 @@
     </form>   
     
   </div>
-  
+
 <div class="container">
 
-  {% comment %} <div class="alert alert-danger">
+{% comment %} <div class="alert alert-danger">
     <strong>{{ form.errors|escape }}</strong>
-  </div> {% endcomment %}
-  <div class="alert alert-danger">
+  </div>  {% endcomment %}
+<div class="alert alert-danger">
   {% if form.errors %}
     {% for field in form %}
         {% for error in field.errors %}
@@ -36,18 +38,18 @@
       {% endfor %}
     {% endif %}
   </div>
-</div>
+</div> 
 
 
 
-  {% comment %} {% if form.errors %}
-      
-           {% for error in form.errors %} 
+   {% comment %} {% if messages %}
+    
+           {% for mensaje in messages %} 
               <div class="alert alert-danger">
-                   <strong>{{ error|escape }}</strong>
+                   <strong>{{ mensaje.tags}}</strong>
               </div>
           
        {% endfor %}
-    {% endif %} {% endcomment %}
+    {% endif %}  {% endcomment %}
 {% endblock %} 
 

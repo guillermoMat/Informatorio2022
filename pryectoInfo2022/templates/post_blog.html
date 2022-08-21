@@ -10,68 +10,58 @@
      
     {% if not blog %}
 
-    <strong><h1 style="color:red;">{{vacio}}</h1></strong>
+      <strong><h1 style="color:red;">{{vacio}}</h1></strong>
 
     {% else %}
      
       <div class="col-10">   
-        <nav class="container fluid" style="background-color: rgba(225, 215, 205 , 0.65);">
-  
+        <nav class="container fluid" style="background-color: rgba(225, 215, 205 , 0.65);"> 
+          {% if categ %}
+            <h2 >CATEGORIA: {{categ.upper}}</h2>
+          {% endif %}
            
           {% for x in blog%}
             
-              <h2 class="border-end:1 "><strong > {{x.titulo}} </strong></h2>
-              <p> {{x.updated}} </p>
+            <h2 class="border-end:1 "><strong > {{x.titulo}} </strong></h2>
+            <p> {{x.updated}} </p>
 
-              {% if x.imagen %}
-           
-              <br>
-                <img class="intro-img img-fluid mb-3 mb-lg-1 rounded  max-width:50% height:50%%;" src= {{x.imagen.url}} > 
-              <br>
-             
-              {% endif %}
+            {% if x.imagen %}
+          
+            <br>
+              <img class="intro-img img-fluid mb-3 mb-lg-1 rounded  max-width:50% height:50%%;" src= {{x.imagen.url}} > 
+            <br>
+            
+            {% endif %}
 
-              {{x.contenido}}
-              <!-- facebook -->
-              <br>
-                {% comment %} }       <div class="fb-like" data-href="/127.0.0.1:8000/post/{{x}}" data-width="" data-layout="standard" data-action="like" data-size="large" data-share="false"></div> {% endcomment %}
-              <div class="fb-comments" data-href="/127.0.0.1:8000/post/{{x}}"  data-width="" data-numposts="3"></div>
-                  <!-- fin facebook -->
+            {{x.contenido}}
+            
+            <!-- facebook -->
+            <br>
+              {% comment %} }       <div class="fb-like" data-href="/127.0.0.1:8000/post/{{x}}" data-width="" data-layout="standard" data-action="like" data-size="large" data-share="false"></div> {% endcomment %}
+            <div class="fb-comments" data-href="/127.0.0.1:8000/post/{{x}}"  data-width="" data-numposts="3"></div>
+                <!-- fin facebook -->
 
-              {% endfor %}
+          {% endfor %}
          
-
         </nav>
       </div>
   
-      <div class="col-2 "  >
-        <nav class="container position-fixed">
-          <div style='width: 75%; margin-align: right; text-align: left; color:green' >
-            <p >Categorias:</p> 
-           
-            {% comment %} <div class="class="btn-group-vertical" role="group" aria-label="Vertical button group" !important>
-               <a type="button" class="btn btn-dark"  href="{% url 'post'  %}" >Todos</a>
-             
-               
+      <div class="col-2 ">
+        <nav class="container position-fixed" >
+          <div style='width: 75%; margin-align: right; text-align: left; color:black; background-color: rgba(225, 215, 205 , 0.65);' >
+            <br>
+            <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+              <a class="btn btn-dark active"  href="{% url 'post'  %}">Todos</a>
               
               {% for c, x in cat.items %}
-                
-              <a type="button" class="btn btn-dark" href="{% url 'categoria' x %}">{{c}}</a>
-           
+               
+              <a class="btn btn-dark"  href="{% url 'post' %}?categoria={{x}}&categorias={{cat}}">{{c}}</a>
+             
               {% endfor %}
-            </div> {% endcomment %}
-
-            <div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
-              <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio1" autocomplete="off">
-              <label class="btn btn-outline-success"  for="vbtn-radio1">Radio 1</label>
-              <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio2" autocomplete="off">
-              <label class="btn btn-outline-success" for="vbtn-radio2">Radio 2</label>
-              <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
-              <label class="btn btn-outline-success" for="vbtn-radio3">Radio 3</label>
+               
             </div>
-
-           </div>
-        </nav>    
+          </div>
+        </nav> 
       </div>
     {% endif %}
   </div>

@@ -4,23 +4,28 @@ from apps.post.models import Post,Categoria
 
 # Create your views here.
 def post(request):
+    parametro_categoria = request.GET.get("categoria")
+    parametro_categorias = request.GET.get("categorias")
     
-    post = Post.objects.filter(activo=True)
-    cat = {}
-    if post :
-        for x in post:
-            cat[x.categoria] = x.categoria_id
+    if not parametro_categoria:
         
-        context = {'blog':post, 'cat':cat}
+        post = Post.objects.filter(activo=True)
+        cat = {}
+        if post :
+            for x in post:
+                cat[x.categoria] = x.categoria_id
+            
+            context = {'blog':post, 'cat':cat}
+        else:
+            context = {'vacio':'No hay blogs disponibes'}
+            
     else:
-        context = {'vacio':'No hay blogs disponibes'}
+        cat = Categoria.objects.get(id=parametro_categoria)
+        post = Post.objects.filter(activo=True,categoria_id=parametro_categoria)
+        context = {'blog':post,'categ':cat.categoria,'cat':parametro_categorias}
 
     return render(request,'post_blog.html', context)
     
-def categorias(request,categoria):
-    cat = Categoria.objects.get(id=categoria)
-    post = Post.objects.filter(activo=True,categoria_id=categoria)
-    context = {'blog':post,'categ':cat.categoria}
-    return render(request,'post_categorias.html', context)
+
 
     
