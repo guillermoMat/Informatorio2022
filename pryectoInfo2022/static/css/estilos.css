@@ -7,6 +7,7 @@ body {
   }
 .navbar{
     font-family: sans-serif;
+   
     background-color: rgba(243, 133, 16,0.8); 
 }
 
@@ -20,6 +21,7 @@ body {
 .font-1{
     font-size: small;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+   
 
 }
 
@@ -35,6 +37,7 @@ body {
     font-size: small;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-style: oblique;
+   
 }
 
 .contenedorLogin{
@@ -124,3 +127,18 @@ footer{
     height: 1px;
     background-color: #cce3de;
 }
+
+.caja { 
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
+    color: #ffffff; 
+    font-size: 18px; 
+    font-weight: 400; 
+    text-align: center; 
+    background: #e9e7e5; 
+    margin: 0 0 25px; 
+    overflow: hidden; 
+    padding: 20px; 
+    border-radius: 35px 0px 35px 0px; 
+    -moz-border-radius: 35px 0px 35px 0px; 
+    -webkit-border-radius: 35px 0px 35px 0px; 
+    border: 2px solid #f0d396;}

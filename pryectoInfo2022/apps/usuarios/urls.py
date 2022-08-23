@@ -1,10 +1,11 @@
 from django.urls import path
 
-from . import views
+from .views import VRegistro 
 
-# urlpatterns = [
+
+urlpatterns = [
    
-#     path('',views,name=),
+    path('',VRegistro.as_view(),name='registro'),
    
   
-# ]
+]

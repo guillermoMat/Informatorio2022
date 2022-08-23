@@ -29,7 +29,8 @@ urlpatterns = [
     path('login/',auth.LoginView.as_view(template_name='usuarios/login.html'),name='login'),
     path('logout/',auth.LogoutView.as_view(),name='logout'),
     path('campanias/',views.campañas,name='campanias'),
-    path('mision/',views.mision,name='mision')
+    path('mision/',views.mision,name='mision'),
+    path('registro/',include('apps.usuarios.urls')),
 ]
 
 if settings.DEBUG:
