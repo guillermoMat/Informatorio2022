@@ -8,19 +8,22 @@ from django.contrib import messages
 from .models import Usuario
 
 
-
 # Create your views here.
 
-
+class RegistroLogin(UserCreationForm):
+        class Meta:
+            model = Usuario
+            fields = UserCreationForm.Meta.fields
+    
 class VRegistro(LoginRequiredMixin, View):
-  
+    
     def get(self, request):
         
-        form=UserCreationForm()
+        form = RegistroLogin()
         return render(request,'usuarios/registro.html',{'form':form})
     
     def post(self,request):
-        form=UserCreationForm(request.POST)
+        form = RegistroLogin(request.POST)
         
         if form.is_valid():
             usuario=form.save()
@@ -28,9 +31,7 @@ class VRegistro(LoginRequiredMixin, View):
             return redirect('inicio')
         
         else:
-            for msg in form.error_messages:
-                messages.error(request, form.error_messages[msg])
+          
             return render(request,'usuarios/registro.html',{'form':form})
         
-    class Meta:
-        model = Usuario
+   

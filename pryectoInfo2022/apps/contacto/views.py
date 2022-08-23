@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.core.mail import send_mail
 from django.conf import settings
+from django.contrib import messages
 
 # Create your views here.
 from .forms import FormContacto
@@ -18,9 +19,15 @@ def contacto(request):
             
             # redirect to a new URL:
             return render(request,'thanks.html')
+        else:
+            pass
+            # for msg in miFormulario.error_messages:
+            #     messages.error(request,  miFormulario.error_messages[msg])
+        
 
     # if a GET (or any other method) we'll create a blank form
     else:
+       
         miFormulario = FormContacto()
 
     return render(request, 'contacto.html', {'form': miFormulario})
