@@ -26,6 +26,7 @@ class VRegistro(LoginRequiredMixin, View):
         form = RegistroLogin(request.POST)
         
         if form.is_valid():
+           
             usuario=form.save()
             login(request, usuario)
             return redirect('inicio')

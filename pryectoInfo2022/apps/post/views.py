@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from apps.post.models import Post,Categoria
 from .forms import PostForm
 
+
 # Create your views here.
 def post(request):
     
@@ -31,16 +32,24 @@ def post_detail(request, pk):
     return render(request, 'post_detail.html', {'post': post})
 
 def post_new(request):
+    post = {'form':PostForm()}
     if request.method == 'POST':
-        form = PostForm(request.POST) 
-        if form.is_valid():
-            post = form.save(commit=False)
-            post.usuario = request.user
-            post.save()
-            return redirect('post_detail', pk=post.pk)
-    else:
-        form = PostForm()
-    return render(request, 'post_edit.html', {'form' : form})
+        formulario = PostForm(request.POST,request.FILES)
+        # formulario = PostForm(data = request.POST)
+        # form = PostForm(request.POST) 
+        if formulario.is_valid():
+            # post = form.save(commit=False)
+            # post.usuario = request.user
+            # post.save()
+            # return redirect('post_detail', pk=post.pk)
+            formulario.save()
+            post['mensaje']='Post guardado'
+        else:
+            post['form']=formulario
+    # else:
+    #     form = PostForm()
+    #  return render(request, 'post_edit.html', {'form' : post})
+    return render(request, 'post_edit.html',post)
 
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
