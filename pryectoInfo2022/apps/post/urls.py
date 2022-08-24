@@ -10,3 +10,4 @@ urlpatterns = [
     path('nuevo', views.post_new, name='post_new'),
     path('post/<int:pk>/delete/', views.post_delete, name='post_delete'),
 ]
+

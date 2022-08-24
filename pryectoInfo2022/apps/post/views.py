@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from apps.post.models import Post,Categoria
+
 from .forms import PostForm
 
 
@@ -32,14 +33,16 @@ def post_detail(request, pk):
     return render(request, 'post_detail.html', {'post': post})
 
 def post_new(request):
-    post = {'form':PostForm()}
+    post = {'form':PostForm(initial={'usuario':request.user})}
     if request.method == 'POST':
         formulario = PostForm(request.POST,request.FILES)
+      
         # formulario = PostForm(data = request.POST)
         # form = PostForm(request.POST) 
         if formulario.is_valid():
             # post = form.save(commit=False)
-            # post.usuario = request.user
+            # form.usuario = request.user
+           
             # post.save()
             # return redirect('post_detail', pk=post.pk)
             formulario.save()
