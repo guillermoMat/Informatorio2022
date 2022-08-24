@@ -142,3 +142,62 @@ footer{
     -moz-border-radius: 35px 0px 35px 0px; 
     -webkit-border-radius: 35px 0px 35px 0px; 
     border: 2px solid #f0d396;}
+
+.card-first{
+    background:rgba(236, 146, 206, 0.89)
+}
+    
+.card-second{
+        background:rgb(111, 99, 194)
+         
+}
+    
+.card-Third{
+        background:rgb(111, 148, 185)
+    
+}
+    
+.card-fourth{
+        background:rgb(146, 146, 3);
+    
+}
+    
+.card-fifth{
+        background: rgb(243, 192, 64);
+    
+}
+    
+.card-sixth{
+        background: rgb(52, 199, 22);
+    
+}
+    
+.text-first{
+       color:rgba(236, 146, 206, 0.89) ;
+}
+    
+.text-second{
+        color:rgb(111, 99, 194)
+}
+    
+    
+.text-Third{
+        color:rgb(111, 148, 185)
+    
+}
+    
+    .text-fourth{
+        color:rgb(146, 146, 3);
+    
+    }
+    
+.text-fifth{
+        color: rgb(243, 192, 64);
+    
+}
+    
+.text-sixth{
+        color: rgb(52, 199, 22);
+    
+}
+    

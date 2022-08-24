@@ -31,6 +31,12 @@ urlpatterns = [
     path('campanias/',views.campañas,name='campanias'),
     path('mision/',views.mision,name='mision'),
     path('registro/',include('apps.usuarios.urls')),
+    path('canma/',views.canma,name='canma'),
+    path('canute/',views.canute,name='canute'),
+    path('canpros/',views.canpros,name='canpros'),
+    path('canpul/',views.canpul,name='canpul'),
+    path('canpiel/',views.canpiel,name='canpiel'),
+    path('canhab/',views.canhab,name='canhab'),
 ]
 
 if settings.DEBUG:

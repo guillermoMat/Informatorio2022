@@ -4,76 +4,87 @@
 {% block title %}Campañas{%endblock%}
 {% block content%}
 
-<div class ="container ">
-  <div class="row">
-    <div class="col-sm-12">
-      
+<link rel="stylesheets" href="estilos.css">
+<div class="row">
 
-      <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
-        <div class="carousel-indicators">
-          <button type="button"  data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="{% static 'img/rosa1.png' %}" class="d-block w-100 h-25" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h1>Cáncer de mamas</h1>
-              <p>Some representative placeholder content for the first slide.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="{% static 'img/azul.png' %}"  class="d-block w-100 h-25" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h1>Cáncer de próstata</h1>
-              <p>Some representative placeholder content for the second slide.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="{% static 'img/verde1.png' %}" class="d-block w-100 h-25" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h1>Cáncer de pulmón</h1>
-              <p>Some representative placeholder content for the third slide.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="{% static 'img/violeta1.png' %}" class="d-block w-100 h-25" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h1>Cáncer de cuello de útero</h1>
-              <p>Some representative placeholder content for the third slide.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="{% static 'img/amarillo.png' %}" class="d-block w-100 h-25" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h1>Cáncer de piel</h1>
-              <p>Some representative placeholder content for the third slide.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="{% static 'img/verdeClaro.png' %}" class="d-block w-100 h-25" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h1>Hábitos saludables</h1>
-              <p>Some representative placeholder content for the third slide.</p>
-            </div>
+    <div class="col-sm-5 mt-3 mx-5">
+      <div class="card">
+        <div class="card-section border rounded p-1">
+          <div class="card-first">
+            <div class="card-body">
+              <h3 class="card-title text-white py-2">Cáncer de mamas</h3><br>
+              <a href="{% url 'canma'%}" class="btn btn-secondary">Leer más</a>
+           </div>
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
       </div>
-
+    </div>
+  <div class="col-sm-5 mt-3 mx-5">
+    <div class="card">
+      <div class="card-section border rounded p-1">
+        <div class="card-second">
+      <div class="card-body">
+        <h3 class="card-title text-white py-2">Cáncer de cuello de útero</h3><br>
+        <a href="{% url 'canute'%}" class="btn btn-secondary">Leer más</a>
+      </div>
+      </div>
     </div>
   </div>
+  </div>
+
+  <div class="col-sm-5 mt-3 mx-5">
+    <div class="card">
+      <div class="card-section border rounded p-1">
+        <div class="card-Third">
+      <div class="card-body">
+       <h3 class="card-title text-white py-2">Cáncer de próstata</h3><br>
+        <a href="{% url 'canpros'%}" class="btn btn-secondary">Leer más</a>
+      </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="col-sm-5 mt-3 mx-5">
+    <div class="card">
+      <div class="card-section border rounded p-1">
+        <div class="card-fourth"> 
+      <div class="card-body">
+        <h3 class="card-title text-white py-2">Cáncer de pulmón</h3><br>
+        <a href="{% url 'canpul'%}" class="btn btn-secondary">Leer más</a>
+      </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="col-sm-5 mt-3 mx-5">
+    <div class="card">
+      <div class="card-section border rounded p-1">
+        <div class="card-fifth">
+      <div class="card-body">
+        <h3 class="card-title text-white py-2">Cáncer de piel</h3><br>
+        <a href="{% url 'canpiel'%}" class="btn btn-secondary">Leer más</a>
+      </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+  <div class="col-sm-5 mt-3 mx-5">
+    <div class="card">
+      <div class="card-section border rounded p-1">
+        <div class="card-sixth">
+      <div class="card-body">
+        <h3 class="card-title text-white py-2">Hábitos saludables</h3><br>
+        <a href="{% url 'canhab'%}" class="btn btn-secondary">Leer más</a>
+      </div>
+      </div>
+    </div>  
+  </div>
+  </div>
+
 </div>
 
 
