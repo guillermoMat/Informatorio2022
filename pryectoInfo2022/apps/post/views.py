@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from apps.post.models import Post,Categoria
 
-from .forms import PostForm
+from .forms import PostForm, FormCategoria
 
 
 # Create your views here.
@@ -77,3 +77,37 @@ def post_delete(request, pk):
     post.delete()
     
     return redirect('post_blog.html')
+
+@login_required
+def admincategorias(request):
+    c = obtieneCategorias()
+
+    data = {'form': FormCategoria()}
+    
+ 
+    if request.method == 'POST':
+        formulario = FormCategoria(data=request.POST)
+        if formulario.is_valid():
+            valido = True
+            for k,v in c.items():
+                if request.POST['categoria'] == v:
+                    valido = False
+            if valido:
+                formulario.save()
+                data['mensaje']='Categoria guardada'
+                c = obtieneCategorias()
+                
+            else:
+                data['mensaje']='Categoria existente'
+        else:
+            data['form']= formulario
+    data['cat']=  c    
+    return render(request,'adminCategoria.html',data)
+        
+    
+def obtieneCategorias():
+    categoria = Categoria.objects.all()
+    categ = {}
+    for x in categoria:
+            categ[x.id] = x.categoria
+    return categ

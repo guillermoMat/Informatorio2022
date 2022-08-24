@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{%load static%}
+{% block title %}Campañas{%endblock%}
+{% block content%}
+
+<form action="" method='post'>{% csrf_token %}
+{{ form }}{{mensaje}}
+<br>
+
+<button type="submit" class="button">Agregar</button>
+<br>
+
+</form>
+
+<select class="form-select" size="5" aria-label="size 3" style="width:25%">
+    {% comment %} <option selected>Open this select menu</option> {% endcomment %}
+    {% for c ,d in cat.items %}
+   
+    <option value="{{c}}">{{d}}</option>
+    {% endfor %}
+  </select>
+
+
+
+
+
+
+
+{% endblock content %}

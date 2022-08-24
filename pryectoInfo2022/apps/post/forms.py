@@ -1,7 +1,7 @@
 
 
 from django import forms
-from .models import Post
+from .models import Post, Categoria
 
 
 class PostForm(forms.ModelForm):
@@ -12,3 +12,9 @@ class PostForm(forms.ModelForm):
         widgets = {
             'usuario': forms.HiddenInput(),
         }
+        
+class FormCategoria(forms.ModelForm):
+    
+    class Meta:
+        model = Categoria
+        fields = '__all__'
