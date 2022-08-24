@@ -2,7 +2,7 @@
 {% load crispy_forms_tags %}
 {% block content %}
     
-    <form action="" method="post" class="post-form">{% csrf_token %}
+    <form action="" method="post" class="post-form" enctype=multipart/form-data>{% csrf_token %}
 
         <h2 style="text-align:center">Posteo Nuevo</h2>
         <div style="width:30%; margin:auto;">
