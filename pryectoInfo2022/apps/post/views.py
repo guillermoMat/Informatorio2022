@@ -1,10 +1,12 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib.auth.decorators import login_required
 from apps.post.models import Post,Categoria
 
 from .forms import PostForm
 
 
 # Create your views here.
+
 def post(request):
     
     parametro_categoria = request.GET.get("categoria")
@@ -26,12 +28,13 @@ def post(request):
         
     return render(request,'post_blog.html', context)
     
-
+@login_required
 def post_detail(request, pk):
 
     post = get_object_or_404(Post, id=pk)
     return render(request, 'post_detail.html', {'post': post})
 
+@login_required
 def post_new(request):
     post = {'form':PostForm(initial={'usuario':request.user})}
     if request.method == 'POST':
@@ -54,6 +57,7 @@ def post_new(request):
     #  return render(request, 'post_edit.html', {'form' : post})
     return render(request, 'post_edit.html',post)
 
+@login_required
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if request.method == 'POST':
@@ -67,6 +71,7 @@ def post_edit(request, pk):
         form = PostForm(instance=post)
     return render(request, 'post_edit.html', {'form': form})
 
+@login_required
 def post_delete(request, pk):
     post = get_object_or_404(Post, pk=pk)
     post.delete()
