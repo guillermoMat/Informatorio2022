@@ -1,30 +1,53 @@
 {% extends 'base.html' %}
-
+{% load crispy_forms_tags %}
 {%load static%}
-{% block title %}Campañas{%endblock%}
+{% block title %}Admin Categorias{%endblock%}
 {% block content%}
 
-<form action="" method='post'>{% csrf_token %}
-{{ form }}{{mensaje}}
-<br>
+<div style="width:25%; margin:left; padding: 10px">
+  <form action="" method='post'>{% csrf_token %}
+    <h2>Agrega una Categoría</h2>
+  {{ form|crispy }}{{mensaje}}
 
-<button type="submit" class="button">Agregar</button>
-<br>
+  <button type="submit" class="btn btn-primary">Agregar</button>
+  <br>
 
-</form>
+  </form>
+</div >
+{% comment %} 
+<div style="width:25%; margin:left; padding: 10px">
+  <form action="" method='get'>
+  <select class="form-select" size="5" aria-label="size 3" >
+     
+      {% comment %} <option selected>Open this select menu</option> {% endcomment %}
+      {% comment %} {% for c ,d in cat.items %}
+  
+      <option value="{{c}}">{{d.upper}}</option>
 
-<select class="form-select" size="5" aria-label="size 3" style="width:25%">
-    {% comment %} <option selected>Open this select menu</option> {% endcomment %}
-    {% for c ,d in cat.items %}
-   
-    <option value="{{c}}">{{d}}</option>
-    {% endfor %}
+      {% endfor %}
+      {% endcomment %}
+{% comment %}       
   </select>
+  <button type="submit" class="btn btn-outline-danger" >Eiminar</button>
+  
+</form>
+</div> {% endcomment %}
+<div class="container " style="width:25%; margin:left; padding: 10px">
+  <h2>Selecciona una categoria a eliminar</h2>
+  
+  <form action="">
+    <div class="form-floating mb-3 " >
+      <select class="form-select" id="sel1" name="lista" >
+        {% for c ,d in cat.items %}
+  
+         <option value={{c}}>{{d.upper}}</option>
 
-
-
-
-
-
+        {% endfor %}
+      </select>
+     
+    </div>
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+  </form>
+</div>
 
 {% endblock content %}

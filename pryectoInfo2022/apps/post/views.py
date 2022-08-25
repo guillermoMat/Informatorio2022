@@ -1,3 +1,4 @@
+from queue import Empty
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from apps.post.models import Post,Categoria
@@ -80,6 +81,13 @@ def post_delete(request, pk):
 
 @login_required
 def admincategorias(request):
+    if request.method == 'GET':
+        try:
+            id_cat=request.GET.get('lista')
+            cat = Categoria.objects.get(id=id_cat)
+            cat.delete()
+        except:
+            pass
     c = obtieneCategorias()
 
     data = {'form': FormCategoria()}
@@ -106,7 +114,7 @@ def admincategorias(request):
         
     
 def obtieneCategorias():
-    categoria = Categoria.objects.all()
+    categoria = Categoria.objects.all().order_by('categoria')
     categ = {}
     for x in categoria:
             categ[x.id] = x.categoria
