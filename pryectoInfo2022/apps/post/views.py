@@ -25,7 +25,7 @@ def post(request):
             context = {'blog':post,'categ':cate.categoria,'cat':cat}
     
     else:
-        context = {'vacio':'No hay blogs disponibes'}
+        context = {'vacio':'No hay posts disponibes'}
         
     return render(request,'post_blog.html', context)
     
@@ -81,34 +81,34 @@ def post_delete(request, pk):
 
 @login_required
 def admincategorias(request):
-    if request.method == 'GET':
-        try:
+    data = {'form': FormCategoria()}
+   
+    if request.method=="GET":
+        
+        if  request.GET :
             id_cat=request.GET.get('lista')
             cat = Categoria.objects.get(id=id_cat)
             cat.delete()
-        except:
-            pass
+            data['mensaje']='CATEGORIA ELIMINADA CON EXITO' 
+       
     c = obtieneCategorias()
-
-    data = {'form': FormCategoria()}
-    
  
     if request.method == 'POST':
         formulario = FormCategoria(data=request.POST)
         if formulario.is_valid():
             valido = True
-            for k,v in c.items():
-                if request.POST['categoria'] == v:
+            for k,v in c.items(): 
+                if request.POST['categoria'].upper() == v.upper():        
                     valido = False
             if valido:
                 formulario.save()
-                data['mensaje']='Categoria guardada'
-                c = obtieneCategorias()
-                
+                data['mensaje']='CATEGORIA GUARDADA'
+                c = obtieneCategorias()      
             else:
-                data['mensaje']='Categoria existente'
+                data['mensaje']='CATEGORIA EXISTENTE'
         else:
             data['form']= formulario
+            data['mensaje']=""
     data['cat']=  c    
     return render(request,'adminCategoria.html',data)
         
