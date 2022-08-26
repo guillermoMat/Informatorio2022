@@ -1,6 +1,9 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from queue import Empty
+from django.shortcuts import render, get_object_or_404, redirect,HttpResponseRedirect
+from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from apps.post.models import Post,Categoria
+from django.urls import reverse_lazy
 
 from .forms import PostForm, FormCategoria
 
@@ -24,7 +27,7 @@ def post(request):
             context = {'blog':post,'categ':cate.categoria,'cat':cat}
     
     else:
-        context = {'vacio':'No hay blogs disponibes'}
+        context = {'vacio':'No hay posts disponibes'}
         
     return render(request,'post_blog.html', context)
     
@@ -73,40 +76,48 @@ def post_edit(request, pk):
 
 @login_required
 def post_delete(request, pk):
+   
     post = get_object_or_404(Post, pk=pk)
     post.delete()
-    
-    return redirect('post_blog.html')
+    return HttpResponseRedirect(reverse_lazy('post'))
+  
 
 @login_required
 def admincategorias(request):
-    c = obtieneCategorias()
-
     data = {'form': FormCategoria()}
-    
+   
+    if request.method=="GET":
+        
+        if  request.GET :
+            id_cat=request.GET.get('lista')
+            cat = Categoria.objects.get(id=id_cat)
+            cat.delete()
+            data['mensaje']='CATEGORIA ELIMINADA CON EXITO' 
+       
+    c = obtieneCategorias()
  
     if request.method == 'POST':
         formulario = FormCategoria(data=request.POST)
         if formulario.is_valid():
             valido = True
-            for k,v in c.items():
-                if request.POST['categoria'] == v:
+            for k,v in c.items(): 
+                if request.POST['categoria'].upper() == v.upper():        
                     valido = False
             if valido:
                 formulario.save()
-                data['mensaje']='Categoria guardada'
-                c = obtieneCategorias()
-                
+                data['mensaje']='CATEGORIA GUARDADA'
+                c = obtieneCategorias()      
             else:
-                data['mensaje']='Categoria existente'
+                data['mensaje']='CATEGORIA EXISTENTE'
         else:
             data['form']= formulario
+            data['mensaje']=""
     data['cat']=  c    
     return render(request,'adminCategoria.html',data)
         
     
 def obtieneCategorias():
-    categoria = Categoria.objects.all()
+    categoria = Categoria.objects.all().order_by('categoria')
     categ = {}
     for x in categoria:
             categ[x.id] = x.categoria

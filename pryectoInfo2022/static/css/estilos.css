@@ -201,3 +201,11 @@ footer{
     
 }
     
+.hd a:hover{
+    color: black !important;
+    text-decoration: wavy;
+    font: bold;
+  
+    
+    
+}

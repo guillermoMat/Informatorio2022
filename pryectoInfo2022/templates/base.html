@@ -46,21 +46,16 @@
               <img src="{% static "img/LaCasita2.png"%}" width="80" height="80">
             </a>
           </ul> 
-          <ul class="navbar-nav mx-auto ">
+          <ul class="navbar-nav mx-auto hd">
           
-            <li class="nav-item mx-auto" >
+            <li class="nav-item mx-auto ">
 
                 <a class="nav-link  text-expanded font-1"  href="{% url 'post'%}" >BLOG</a>
               </li>
               <li class="nav-item mx-auto" >
                 <a class="nav-link font-1"  href="{% url 'campanias' %}" >CAMPAÑAS</a>
               </li>
-              <li class="nav-item mx-auto" >
-                <a class="nav-link font-1" href="#" >EVENTOS</a>
-              </li>
-              <li class="nav-item mx-auto">
-                <a class="nav-link font-1"  href="#">DONACIONES</a>
-              </li>
+           
               <li class="nav-item mx-auto">
                 <a class="nav-link font-1" href="{% url 'mision'%}" >MISION</a>
               </li>
@@ -76,7 +71,7 @@
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="{% url 'registro' %}">Registro de Usuarios</a></li>
                   <li><a class="dropdown-item" href="{% url 'admincat'%}">Administrar Categorías</a></li>
-                  <li><a class="dropdown-item" href="#">Actualización de Blogs</a></li>
+                  <li><a class="dropdown-item" href="{% url 'post_new' %}">Agregar Blogs</a></li>
                
                 
                 </ul>
@@ -177,9 +172,9 @@
           <div class="logo">
             <img src="{% static 'img/LaCasita3.png' %}"  alt="Logo de SLee Dw">
           </div>
-          <div class="logo">
+          {% comment %} <div class="logo">
             <img src="{% static 'img/lalcec2.png' %}"  alt="Logo de SLee Dw">
-          </div>
+          </div> {% endcomment %}
       </div>
   
       <div class="box__footer">
