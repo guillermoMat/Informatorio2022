@@ -14,11 +14,12 @@ def contacto(request):
         # check whether it's valid:
         if miFormulario.is_valid():
             # process the data in form.cleaned_data as required
-            infoFormulario = miFormulario.cleaned_data
-            send_mail(infoFormulario['asunto'],infoFormulario['mensaje'],infoFormulario.get('email',''),['nesky66@gmail.com'],)
+            miFormulario.save()
+            # infoFormulario = miFormulario.cleaned_data
+            # send_mail(infoFormulario['asunto'],infoFormulario['mensaje'],infoFormulario.get('email',''),['nesky66@gmail.com'],)
             
             # redirect to a new URL:
-            return render(request,'thanks.html')
+        
         else:
             pass
             # for msg in miFormulario.error_messages:

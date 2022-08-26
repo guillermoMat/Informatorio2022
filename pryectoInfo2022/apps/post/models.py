@@ -1,5 +1,6 @@
 
 from tabnanny import verbose
+from unittest.util import _MAX_LENGTH
 from django.db import models
 # from django.utils import timezone
 from django.conf import settings
@@ -26,7 +27,7 @@ class Categoria(Date):
 class Post(Date):
     titulo = models.CharField(max_length=200, blank=False, null=True)
     contenido = models.TextField(null=True)
-    imagen = models.ImageField(upload_to='post/',null=True,blank=True)
+    imagen = models.ImageField(upload_to='post/',max_length=200, null=True,blank=True)
     activo = models.BooleanField(default=True)
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE,blank=False,null=True)
     usuario = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,null=True)
