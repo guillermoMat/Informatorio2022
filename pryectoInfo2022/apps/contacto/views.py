@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 from django.conf import settings
 from django.contrib import messages
@@ -15,6 +15,7 @@ def contacto(request):
         if miFormulario.is_valid():
             # process the data in form.cleaned_data as required
             miFormulario.save()
+            return redirect('contacto')
             # infoFormulario = miFormulario.cleaned_data
             # send_mail(infoFormulario['asunto'],infoFormulario['mensaje'],infoFormulario.get('email',''),['nesky66@gmail.com'],)
             

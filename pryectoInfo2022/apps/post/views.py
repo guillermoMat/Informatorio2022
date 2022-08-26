@@ -1,10 +1,7 @@
-from queue import Empty
-from django.shortcuts import render, get_object_or_404, redirect,HttpResponseRedirect
-from django.conf import settings
+
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from apps.post.models import Post,Categoria
-from django.urls import reverse_lazy
-
 from .forms import PostForm, FormCategoria
 
 
@@ -69,7 +66,8 @@ def post_edit(request, pk):
             post = form.save(commit=False)
             post.usuario = request.user
             post.save()
-            return redirect('post_detail', pk=post.pk)
+            # return redirect('post_detail', pk=post.pk)
+            return redirect('post')
     else:
         form = PostForm(instance=post)
     return render(request, 'post_edit.html', {'form': form})
@@ -79,7 +77,8 @@ def post_delete(request, pk):
    
     post = get_object_or_404(Post, pk=pk)
     post.delete()
-    return HttpResponseRedirect(reverse_lazy('post'))
+    return redirect('post')
+   
   
 
 @login_required
