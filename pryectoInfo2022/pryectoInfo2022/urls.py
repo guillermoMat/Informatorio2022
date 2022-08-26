@@ -37,6 +37,7 @@ urlpatterns = [
     path('canpul/',views.canpul,name='canpul'),
     path('canpiel/',views.canpiel,name='canpiel'),
     path('canhab/',views.canhab,name='canhab'),
+    path('profesionales/',views.profesionales,name='profesionales'),
 ]
 
 if settings.DEBUG:

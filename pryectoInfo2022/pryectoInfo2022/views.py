@@ -28,3 +28,6 @@ def canpiel(request):
 
 def canhab(request):
     return render(request,'canhab.html')
+
+def profesionales(request):
+    return render(request,'profesionales.html')
