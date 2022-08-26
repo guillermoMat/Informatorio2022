@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{%load static%}
+{% block title %} Profesionales {%endblock%}
+{% block content %}
+
+<div class="card mb-4" style="max-width: 600px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{% static "img/chequeos.jpg"%}" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">HACETE LOS CHEQUEOS CON NOSOTROS</h5> 
+        <p class="card-text">Contamos con profesionales altamente capacitados</p><br>
+        <p class="card-text"><small class="text-muted">Un estudio a tiempo puede salvarte la vida</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card mb-4" style="width: 25rem;">
+  <img src="{% static "img/Acosta.jpg"%}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">GINECOLOGO</h5>
+    <p class="card-text">Dr. Walter Acosta</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Consulta ginecológica y mamaria</li>
+    <li class="list-group-item">PAP</li> 
+  </ul>
+  <div class="card-body">
+    <a href="{% url 'contacto' %}" class="card-link">SOLICITAR TURNO</a>
+      </div>
+</div>
+
+<div class="card mb-4" style="width: 25rem;">
+  <img src="{% static "img/muchut.jpg"%}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">NUTRICIONISTA</h5>
+    <p class="card-text">Lic. Luciana Muchut</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Consulta nutricional</li>
+    <li class="list-group-item">Asesoramiento nutricional en oncología</li>
+    <li class="list-group-item"></li>
+  </ul>
+  <div class="card-body">
+    <a href="{% url 'contacto' %}" class="card-link">SOLICITAR TURNO</a>
+      </div>
+</div>
+
+<div class="card mb-4" style="width: 25rem;">
+  <img src="{% static "img/Saccani.jpg"%}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">CLINICA MEDICA</h5>
+    <p class="card-text">Dra. Gabriela Saccari</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">AtenciÓn a pacientes con enfermedades crónicas no transmisibles</li>
+    <li class="list-group-item">Diabetes</li>
+    <li class="list-group-item">Hipetensión arterial </li>
+    <li class="list-group-item">Insuficiencia cardíaca </li>
+    <li class="list-group-item">Tiroides </li>
+  </ul>
+  <div class="card-body">
+    <a href="{% url 'contacto' %}" class="card-link">SOLICITAR TURNO</a>
+  </div>
+</div>
+
+<div class="card" style="width: 25rem;">
+  <img src="{% static "img/Manzino.jpg"%}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">NUTRICIONISTA</h5>
+    <p class="card-text">Dra. Rocio Manzino</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Consulta Nutricional</li>
+    <li class="list-group-item">Atención consultorio<br>Jueves 16 a 19 hs</li>
+  </ul>
+  <div class="card-body">
+    <a href="{% url 'contacto' %}" class="card-link">SOLICITAR TURNO</a>
+  </div>
+</div>
+
+{% endblock%}
+
