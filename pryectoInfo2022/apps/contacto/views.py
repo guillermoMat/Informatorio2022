@@ -5,6 +5,7 @@ from django.contrib import messages
 
 # Create your views here.
 from .forms import FormContacto
+from .models import Comentarios
 
 def contacto(request):
     # if this is a POST request we need to process the form data
@@ -33,3 +34,11 @@ def contacto(request):
         miFormulario = FormContacto()
 
     return render(request, 'contacto.html', {'form': miFormulario})
+
+def comentarios(request):
+    com = Comentarios.objects.all()
+    comen = {}
+    for x in com:
+        comen[x.nombre]=x.comentario
+   
+    return render(request, 'comentarios.html', {'comentarios':comen})

@@ -1,0 +1,43 @@
+
+{% extends 'base.html' %}
+
+{%load static%}
+{% block title %}Campañas{%endblock%}
+{% block content%}
+
+<div class="container mt-3">
+    <h2>Comentarios</h2>
+    <p>Comentario realizado por la gente:</p>            
+    <table class="table table-secondary table-striped">
+      <thead>
+        <tr style='background-color: cyan;'>
+          <th>NOMBRE</th>
+          <th>COMENTARIO</th>
+          <th>Eliminar</th
+           
+      
+        </tr>
+      </thead>
+      <tbody>
+        {% for nom, com in comentarios.items%}
+        <tr>
+          <td>{{nom}}</td>
+          <td>{{com}}</td>
+          <td>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="check1" name="option1" value="something">
+                <label class="form-check-label"></label>
+            </div>
+          </td>
+         
+        </tr>
+        
+       {% endfor %}
+
+      
+
+      </tbody>
+    </table>
+  </div>
+
+  {% endblock %}
