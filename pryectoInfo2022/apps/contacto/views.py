@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect,get_object_or_404
 from django.core.mail import send_mail
 from django.conf import settings
 from django.contrib import messages
@@ -36,9 +36,18 @@ def contacto(request):
     return render(request, 'contacto.html', {'form': miFormulario})
 
 def comentarios(request):
+    if request.method=='POST':
+        if request.POST:
+            id = request.POST.getlist('eliminar')
+            for x in id:
+                c = Comentarios.objects.get(id=x)
+                c.delete()
+            
+            return redirect('comentarios')
+    
     com = Comentarios.objects.all()
     comen = {}
     for x in com:
-        comen[x.nombre]=x.comentario
+        comen[x.id]=x
    
     return render(request, 'comentarios.html', {'comentarios':comen})

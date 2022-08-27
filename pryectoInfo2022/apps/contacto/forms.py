@@ -8,4 +8,4 @@ class FormContacto(forms.ModelForm):
     
     class Meta:#Le decimos que modelo utilizar para crear formulario
         model = Comentarios
-        fields = ('nombre', 'comentario')
+        fields = ('nombre', 'telefono','domicilio','comentario')
