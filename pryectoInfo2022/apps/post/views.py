@@ -119,10 +119,24 @@ def admincategorias(request):
     data['cat']=  c    
     return render(request,'adminCategoria.html',data)
         
+        
+def vistasPost(request):
+    if request.user.is_superuser:
+        blogs = Post.objects.filter()
+    else:
+        blogs = Post.objects.filter(usuario=request.user)
     
+    return render(request,'post_vista.html',{'data':blogs})
+    
+
+
+
+
+
 def obtieneCategorias():
     categoria = Categoria.objects.all().order_by('categoria')
     categ = {}
     for x in categoria:
             categ[x.id] = x.categoria
     return categ
+
