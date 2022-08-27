@@ -91,7 +91,11 @@ def admincategorias(request):
             id_cat=request.GET.get('lista')
             cat = Categoria.objects.get(id=id_cat)
             cat.delete()
-            data['mensaje']='CATEGORIA ELIMINADA CON EXITO' 
+            data['mensaje2']='CATEGORIA ELIMINADA CON EXITO'
+            data['mensaje1']='' 
+        else:
+            data['mensaje1']=""
+            data['mensaje2']=""
        
     c = obtieneCategorias()
  
@@ -104,13 +108,14 @@ def admincategorias(request):
                     valido = False
             if valido:
                 formulario.save()
-                data['mensaje']='CATEGORIA GUARDADA'
+                data['mensaje1']='CATEGORIA GUARDADA'
                 c = obtieneCategorias()      
             else:
-                data['mensaje']='CATEGORIA EXISTENTE'
+                data['mensaje1']='CATEGORIA EXISTENTE'
+            data['mensaje2']='' 
         else:
             data['form']= formulario
-            data['mensaje']=""
+            
     data['cat']=  c    
     return render(request,'adminCategoria.html',data)
         
