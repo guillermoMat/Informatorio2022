@@ -4,82 +4,90 @@
 {% block title %} Profesionales {%endblock%}
 {% block content %}
 
-<div class="card mb-4" style="max-width: 600px;">
-  <div class="row g-0">
-    <div class="col-md-4">
+
+<div class="card mb-4" style="max-width: 1075px;">
+  <div class="row g-3">
+    <div class="col-md-3">
       <img src="{% static "img/chequeos.jpg"%}" class="img-fluid rounded-start" alt="...">
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title">HACETE LOS CHEQUEOS CON NOSOTROS</h5> 
-        <p class="card-text">Contamos con profesionales altamente capacitados</p><br>
-        <p class="card-text"><small class="text-muted">Un estudio a tiempo puede salvarte la vida</small></p>
+        <h3 class="card-title">HACETE LOS CHEQUEOS CON NOSOTROS</h3> 
+        <h4 class="card-title">Contamos con profesionales altamente capacitados</h4><br><br>
+        <h5 class="card-title">Un estudio a tiempo puede salvarte la vida</h5>
       </div>
     </div>
   </div>
 </div>
 
-<div class="card mb-4" style="width: 25rem;">
-  <img src="{% static "img/Acosta.jpg"%}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">GINECOLOGO</h5>
-    <p class="card-text">Dr. Walter Acosta</p>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">Consulta ginecológica y mamaria</li>
-    <li class="list-group-item">PAP</li> 
-  </ul>
-  <div class="card-body">
-    <a href="{% url 'contacto' %}" class="card-link">SOLICITAR TURNO</a>
+<div class="row row-cols-5 row-cols-md-5 g-4">
+  <div class="col">
+    <div class="card h-100">
+      <img src="{% static "img/Acosta.jpg"%}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">GINECOLOGO</h5>
+        <p class="card-text">Dr. Walter Acosta</p><br><br><br>
       </div>
-</div>
-
-<div class="card mb-4" style="width: 25rem;">
-  <img src="{% static "img/muchut.jpg"%}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">NUTRICIONISTA</h5>
-    <p class="card-text">Lic. Luciana Muchut</p>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">Consulta nutricional</li>
-    <li class="list-group-item">Asesoramiento nutricional en oncología</li>
-    <li class="list-group-item"></li>
-  </ul>
-  <div class="card-body">
-    <a href="{% url 'contacto' %}" class="card-link">SOLICITAR TURNO</a>
+        <ul class="list-group list-group-flush">
+        <li class="list-group-item">Consulta ginecológica y mamaria</li>
+        <li class="list-group-item">PAP</li>
+      </ul>
+      <div class="card-footer">
+        <a href="{% url 'contacto' %}" class="btn btn-secondary">SOLICITAR TURNO</a>
       </div>
-</div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img class= "imagen" src="{% static "img/muchut.jpg"%}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">NUTRICIONISTA</h5>
+        <p class="card-text">Lic. Luciana Muchut</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Consulta nutricional</li>
+        <li class="list-group-item">Asesoramiento nutricional en oncología</li>
+      </ul>
+      <div class="card-footer">
+        <a href="{% url 'contacto' %}" class="btn btn-secondary">SOLICITAR TURNO</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="{% static "img/Saccani.jpg"%}" class="card-img-top" alt="img-fluid">
+      <div class="card-body">
+        <h5 class="card-title">MEDICINA CLINICA</h5>
+        <p class="card-text">Dra. Gabriela Saccari </p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Atención a pacientes con enfermedades crónicas no transmisibles</li>
+        <li class="list-group-item">Diabetes 
 
-<div class="card mb-4" style="width: 25rem;">
-  <img src="{% static "img/Saccani.jpg"%}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">CLINICA MEDICA</h5>
-    <p class="card-text">Dra. Gabriela Saccari</p>
+        <li class="list-group-item">Hipetensión arterial</li>
+        <li class="list-group-item">Insuficiencia cardíaca</li>
+        <li class="list-group-item">Tratamiento de tiroides</li>
+       </ul>
+       <div class="card-footer">
+        <a href="{% url 'contacto' %}" class="btn btn-secondary">SOLICITAR TURNO</a>
+      </div>
+    </div>
   </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">AtenciÓn a pacientes con enfermedades crónicas no transmisibles</li>
-    <li class="list-group-item">Diabetes</li>
-    <li class="list-group-item">Hipetensión arterial </li>
-    <li class="list-group-item">Insuficiencia cardíaca </li>
-    <li class="list-group-item">Tiroides </li>
-  </ul>
-  <div class="card-body">
-    <a href="{% url 'contacto' %}" class="card-link">SOLICITAR TURNO</a>
-  </div>
-</div>
-
-<div class="card" style="width: 25rem;">
-  <img src="{% static "img/Manzino.jpg"%}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">NUTRICIONISTA</h5>
-    <p class="card-text">Dra. Rocio Manzino</p>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">Consulta Nutricional</li>
-    <li class="list-group-item">Atención consultorio<br>Jueves 16 a 19 hs</li>
-  </ul>
-  <div class="card-body">
-    <a href="{% url 'contacto' %}" class="card-link">SOLICITAR TURNO</a>
+  <div class="col">
+    <div class="card h-100">
+      <img src="{% static "img/Manzino2.jpg"%}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">NUTRICIONISTA</h5>
+        <p class="card-text">Lic. Rocio Manzino</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Consulta Nutricional</li>
+        <li class="list-group-item">Atención consultorio<br>Jueves 16 a 19 hs</li>
+      </ul>
+      <div class="card-footer">
+        <a href="{% url 'contacto' %}" class="btn btn-secondary">SOLICITAR TURNO</a>
+      </div>
+    </div>
   </div>
 </div>
 
