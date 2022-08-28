@@ -60,11 +60,12 @@ def post_new(request):
 @login_required
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
+    
     if request.method == 'POST':
         form = PostForm(request.POST,request.FILES, instance=post) 
         if form.is_valid():
             post = form.save(commit=False)
-            post.usuario = request.user
+     
             post.save()
             # return redirect('post_detail', pk=post.pk)
             return redirect('post')
