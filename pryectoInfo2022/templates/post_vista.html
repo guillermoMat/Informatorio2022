@@ -2,11 +2,33 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-{% for x in data%}
 
-{{ x.titulo}}
-<br>
-{% endfor %}
+
+<div class="row row-cols-5 row-cols-md-5 g-4">
+    {% for x in post%}
+    <a>
+      <div class="col">
+        <div class="card h-100">
+          <img src="{{ x.imagen.url }}" class="card-img-top" style="height:150px" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{x.titulo}}</h5>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Creador: {{x.usuario.username.upper}}</li>
+            {% if x.activo %}
+            <li class="list-group-item" style="color:blue"><b>ACTIVO</b></li>
+            {% else %}
+            <li class="list-group-item" style="color:red"><b>NO ACTIVO</b></li>
+            {% endif %}
+            <li class="list-group-item">Creado: {{x.created}}</li>
+            <li class="list-group-item">Modificado: {{x.updated}}</li>
+          </ul>
+        </div>
+      </div>
+    </a>
+    {% endfor %}
+</div>
+
 
 
 {% endblock %}

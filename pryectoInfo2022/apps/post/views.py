@@ -126,7 +126,7 @@ def vistasPost(request):
     else:
         blogs = Post.objects.filter(usuario=request.user)
     
-    return render(request,'post_vista.html',{'data':blogs})
+    return render(request,'post_vista.html',{'post':blogs})
     
 
 
