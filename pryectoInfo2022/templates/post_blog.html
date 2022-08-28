@@ -22,7 +22,7 @@
            
           {% for x in blog%}
             
-            <h2 class="border-end:1 "><strong><a href="{% url 'post_detail' x.pk %}"data-bs-toggle="tooltip" title="Administrar Posteo">{{x.titulo}}</a></strong></h2>
+            <h2 class="border-end:1 "><strong>{{x.titulo}}</strong></h2>
             <p> {{x.updated}} </p>
 
             {% if x.imagen %}

@@ -209,8 +209,16 @@ footer{
     color: black !important;
     text-decoration: none ;
     font: bold;
+      
     
-    
-    
+}
+
+.borde:hover{
+   
+   
+    outline: orange solid 2px;
+    margin: auto;  
+    padding: 2px;
+   
     
 }

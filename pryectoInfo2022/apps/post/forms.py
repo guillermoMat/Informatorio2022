@@ -8,7 +8,7 @@ class PostForm(forms.ModelForm):
     
     class Meta:#Le decimos que modelo utilizar para crear formulario
         model = Post
-        fields = ('titulo', 'contenido','imagen','categoria','usuario')
+        fields = ('titulo', 'contenido','imagen','activo','categoria','usuario')
         widgets = {
             'usuario': forms.HiddenInput(),
         }

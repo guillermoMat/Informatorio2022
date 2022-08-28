@@ -119,7 +119,7 @@ def admincategorias(request):
     data['cat']=  c    
     return render(request,'adminCategoria.html',data)
         
-        
+@login_required      
 def vistasPost(request):
     if request.user.is_superuser:
         blogs = Post.objects.filter()
