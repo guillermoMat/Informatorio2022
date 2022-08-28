@@ -75,7 +75,7 @@ def post_edit(request, pk):
 
 @login_required
 def post_delete(request, pk):
-   
+    print(pk)
     post = get_object_or_404(Post, pk=pk)
     post.delete()
     return redirect('post')
