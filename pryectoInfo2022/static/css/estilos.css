@@ -226,3 +226,28 @@ footer{
 .colortitle{
     color:rgb(243, 133, 16)
 }
+
+/*estilos de iconos redes.Sociales-contacto*/
+.buttons {
+    min-width: 150px;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .buttons a {
+    text-decoration: none;
+    font-size: 18px;
+    width: 35px;
+    height: 35px;
+    line-height: 34px;
+    text-align: center;
+    background: #314652;
+    color: #f1f1f1;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+    transition: all .4s ease-in-out;
+  }
+  
+  .buttons a:hover {
+    transform: scale(1.2);
+  }
