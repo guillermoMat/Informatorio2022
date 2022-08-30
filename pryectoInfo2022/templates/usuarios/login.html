@@ -5,17 +5,22 @@
 
 
 <div class="contenedorLogin">
-  <form method="POST" style="text-align:center;margin: 20px auto">{% csrf_token %}
- 
-     
-      <input type="text" name="username" placeholder="USUARIO">
-      <br><br>
-      <input type="password" name="password" placeholder="CONTRASEÑA">
-      <br><br>
-      <input type="submit" name="" value="LOGUIN">
-      
+  <h2>Iniciar Sesión</h2>
+  <form method="POST">{% csrf_token %}
+    <div class="elemento">
+      <label for="username">Usuario</label>
+      <input type="text" id="username" name="username" required="true">
+    </div>
+    <div class="elemento">
+      <label for="password">Contraseña</label>
+      <input type="password" id="password" name="password" required="true">
+    </div>
+    <div class="elemento">
+      <input type="submit" name="" value="Enviar">
+    </div>
+
     </form>   
-    
+
   </div>
 
 <div class="container">

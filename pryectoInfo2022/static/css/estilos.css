@@ -39,14 +39,54 @@ body {
     font-style: oblique;
    
 }
-
+/*
 .contenedorLogin{
     background-color: rgb(243, 133, 16);
     margin: 10px auto;
     width: 25%;
     border-radius: 5px;
     padding: 1px 0px;
+}
+*/
 
+
+/*CSS PARA LOGIN*/
+.contenedorLogin{
+    margin: 50px auto;
+    width: 400px;
+    padding: 30px;
+    background: linear-gradient(#ff7b00,#ffd000);
+    border-radius: 10px;
+}
+.contenedorLogin h2{
+    margin: 0 0 30px;
+    padding: 0;
+    font-size: 30px;
+    color: #1b263b;
+    text-align: center;
+}
+.contenedorLogin .elemento label{
+    color: #1b263b;
+    font-size: 15px;
+}
+.contenedorLogin .elemento input{
+    width: 100%;
+    padding: 10px 0;
+    color: #ffffff;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #f1f1f1;
+    margin-bottom: 30px;
+}
+.contenedorLogin .elemento input[type="submit"]{
+    background-color:#1b263b;
+    border: none;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 15px;
+    margin-top: 30px;
+    border-radius: 50px;
 }
 
 /* ELEMENTOS PARA PIE DE PAGINA*/
