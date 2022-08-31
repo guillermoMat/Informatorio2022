@@ -10,6 +10,6 @@ class Date(models.Model):
         
 class Comentarios(Date):
     nombre = models.CharField(max_length=100, blank=False, null=True)
-    domicilio = models.CharField(max_length=100,blank=True,null=True)
-    telefono = models.CharField(max_length=100,blank=True,null=True)
+    domicilio = models.CharField(max_length=100,blank=True,default='')
+    telefono = models.CharField(max_length=100,blank=True,default='')
     comentario = models.TextField(max_length=100,blank=False,null=True)
