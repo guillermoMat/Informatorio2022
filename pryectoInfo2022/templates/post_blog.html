@@ -7,39 +7,54 @@
 <nav class="container-fluid">
   <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v14.0" nonce="KNIfzx54"></script>
   <div class="row ">
-     
+    
     {% if not blog %}
 
       <strong><h1 style="color:red;">{{vacio}}</h1></strong>
 
     {% else %}
-   
+  
       <div class="col-md-10 ">   
         <nav class="container-fluid" style="background-color: rgba(225, 215, 205 , 0.65);"> 
           {% if categ %}
             <h2 >CATEGORIA: {{categ.upper}}</h2>
           {% endif %}
-           
+
           {% for x in blog%}
-            
-            <h2 class="border-end:1 "><strong>{{x.titulo}}</strong></h2>
-            <p> {{x.updated}} </p>
+          <div class="contenedor-post-blog">
+            <div class="row">
+              <div class="col-5">
+                {% if x.imagen %}
+                  <img class="" height= "" width="" id="imagen-post-blog" src= {{x.imagen.url}} >
+                {% else %}
+                  <img src="{% static 'img/sinImagen.jpg'%}" class="" style="" id="imagen-post-blog" alt="...">
+                {% endif %}
 
-            {% if x.imagen %}
-            <div class="caja">
-              <br>
-                <img class=" img-fluid " width="1000"style="height: 700px"  src= {{x.imagen.url}} > 
-              <br>
+              </div>
+              <div class="col-7">
+                <div >
+                  <p class="fecha-post-blog">{{x.updated}}</p>
+                  <h2 class="titulo-post-blog"><a href="{% url 'post_detail' pk=x.pk %}" class="enlace-post-detail"><strong>{{x.titulo}}</strong></a></h2>
+                  
+                  <p class="intro-post-blog">
+                    <br>
+                    <em>{{ x.introduccion }}</em>
+                    <hr style="border: 10px;">
+                  </p>
+                </div>  
+              </div>
             </div>
-            {% endif %}
+          </div>
 
-            {{x.contenido}}
-            
-            <!-- facebook -->
-            <br>
-              {% comment %} }       <div class="fb-like" data-href="/127.0.0.1:8000/post/{{x}}" data-width="" data-layout="standard" data-action="like" data-size="large" data-share="false"></div> {% endcomment %}
-            <div class="fb-comments" data-href="/127.0.0.1:8000/post/{{x}}"  data-width="" data-numposts="3"></div>
-                <!-- fin facebook -->
+              <!-- facebook -->
+              <br>
+                {% comment %} }       <div class="fb-like" data-href="/127.0.0.1:8000/post/{{x}}" data-width="" data-layout="standard" data-action="like" data-size="large" data-share="false"></div> {% endcomment %}
+              <div class="fb-comments" data-href="/127.0.0.1:8000/post/{{x}}"  data-width="auto" data-numposts="3"></div>
+                  <!-- fin facebook -->
+
+
+              <hr class="linea">
+              <hr class="linea">
 
           {% endfor %}
           

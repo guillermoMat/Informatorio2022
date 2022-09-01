@@ -26,6 +26,7 @@ class Categoria(Date):
 
 class Post(Date):
     titulo = models.CharField(max_length=200, blank=False, null=True)
+    introduccion = models.CharField(max_length=200, blank=False, null=True)
     contenido = models.TextField(null=True)
     imagen = models.ImageField(upload_to='post/',max_length=200, null=True,blank=True)
     activo = models.BooleanField(default=True)
