@@ -2,7 +2,8 @@
 {% load static %}
 {% block content %}
 <div class="contenedor-post-detail">
-    <a id="boton-atras" href="{% url 'post' %}" class="boton-enlace"><span ></span>Atras</a>
+    <a id="boton-atras" href="javascript:history.back()" class="boton-enlace"> Volver </a>
+    {% comment %} <a id="boton-atras" href="{% url 'post' %}" class="boton-enlace"><span ></span>Atras</a> {% endcomment %}
     <h1 class="titulo-post-detail"> 
         {{ post.titulo }} 
     </h1>
