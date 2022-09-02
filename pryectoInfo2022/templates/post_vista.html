@@ -7,7 +7,7 @@
 
 <div class="row row-cols-5 row-cols-md-5 g-4">
     {% for x in post%}
-   
+  
     <div class="col">
       <a href="{% url 'post_detail' x.pk %}" >
         <div class="card h-100 borde">
@@ -18,7 +18,7 @@
           {% else %}
           <img src="{% static 'img/no_imagen.jpg'%}" class="card-img-top" style="height:150px" alt="...">
           {% endif %}
-       
+      
           <div class="card-body">
             <h5 class="card-title">{{x.titulo}}</h5>
           </div>
@@ -32,7 +32,8 @@
             <li class="list-group-item">Creado: {{x.created}}</li>
             <li class="list-group-item">Modificado: {{x.updated}}</li>
           </ul>
-
+          <a class="btn btn-default" href="{% url 'post_edit' pk=x.pk %}" data-bs-toggle="tooltip" title="Modificar Blog"><span class="glyphicon glyphicon-pencil"></span></a><title>Editar</title>
+          <a class="btn btn-default" href="{% url 'post_delete' pk=x.pk %}" data-bs-toggle="tooltip" title="Eliminar Blog"><span class="glyphicon glyphicon-trash"></span></a><title>Eliminar</title>
         </div>
       </a>
     </div>

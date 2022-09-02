@@ -29,18 +29,19 @@
                 {% else %}
                   <img src="{% static 'img/sinImagen.jpg'%}" class="" style="" id="imagen-post-blog" alt="...">
                 {% endif %}
-
               </div>
+              
               <div class="col-7">
                 <div >
-                  <p class="fecha-post-blog">{{x.updated}}</p>
+                  
                   <h2 class="titulo-post-blog"><a href="{% url 'post_detail' pk=x.pk %}" class="enlace-post-detail"><strong>{{x.titulo}}</strong></a></h2>
                   
                   <p class="intro-post-blog">
                     <br>
                     <em>{{ x.introduccion }}</em>
-                    <hr style="border: 10px;">
                   </p>
+                  <hr style="border: 10px;">
+                  <p class="fecha-post-blog">{{x.updated}}</p>
                 </div>  
               </div>
             </div>

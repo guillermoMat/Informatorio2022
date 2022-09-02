@@ -28,7 +28,7 @@ def post(request):
         
     return render(request,'post_blog.html', context)
     
-@login_required
+
 def post_detail(request, pk):
 
     post = get_object_or_404(Post, id=pk)
@@ -78,7 +78,7 @@ def post_delete(request, pk):
     print(pk)
     post = get_object_or_404(Post, pk=pk)
     post.delete()
-    return redirect('post')
+    return redirect('vista_post')
    
   
 
