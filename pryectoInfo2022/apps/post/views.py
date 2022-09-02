@@ -55,6 +55,7 @@ def post_new(request):
     # else:
     #     form = PostForm()
     #  return render(request, 'post_edit.html', {'form' : post})
+    post['titulo']='Posteo Nuevo'
     return render(request, 'post_edit.html',post)
 
 @login_required
@@ -71,7 +72,9 @@ def post_edit(request, pk):
             return redirect('post')
     else:
         form = PostForm(instance=post)
-    return render(request, 'post_edit.html', {'form': form})
+    post = {'titulo':'Editar Posteo'}
+    post['form']=form
+    return render(request, 'post_edit.html', post)
 
 @login_required
 def post_delete(request, pk):
