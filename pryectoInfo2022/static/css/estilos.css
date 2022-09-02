@@ -392,9 +392,17 @@ footer{
 }
 
 #marco{
+    position:relative;
+    right:0;
+    left:50%;
+    bottom: 0;
+    top: 50%;
+    display: inline-block;
+    transform: translate(-50%);
+   
     width:80%;
     height: auto;
-    margin: auto;
+    margin:auto; 
     background: white;
     border-radius: 10px;
 }
@@ -435,4 +443,21 @@ footer{
 
 .boton-enlace{
     text-decoration: none;
+}
+
+.caja_view{
+  
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+.texto_sub{
+    font-size: large;
+    letter-spacing: 0;
+text-shadow: -3px -3px 3px #000000, 3px -3px 3px #000000, -3px 3px 3px #000000, 3px 3px 3px #000000; */
+    border-color: #000000;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    /* transform: translate(-50%); */
 }

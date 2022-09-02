@@ -8,15 +8,24 @@
         {{ post.titulo }} 
     </h1>
     <h4 id="update-post-detail"> {{post.updated}} </h4>
-    {% if post.imagen %}
-        <div id="marco">
+    
+    
+    <div id="marco">
+    {% comment %} <div class="caja_view"> {% endcomment %}
+        {% if post.imagen %}
+        {% comment %} <div id="marco"> {% endcomment %}
             <img class="imagen-post-detail" src= {{post.imagen.url}} > 
-        </div>
-    {% else %}
-        <div id="marco">
+        {% comment %} </div> {% endcomment %}
+        {% else %}
+        {% comment %} <div id="marco"> {% endcomment %}
             <img src="{% static 'img/sinImagen.jpg'%}" class="imagen-post-detail">
-        </div>
-    {% endif %}
+        {% comment %} </div> {% endcomment %}
+        {% endif %}
+           
+        <div class="texto_sub" style="color:white">{{post.introduccion}}</div>
+    {% comment %} </div> {% endcomment %}
+    </div>
+
     <div class="cuadrado">
         <div class="contenido-post-detail">
             <p style="text-align: justify">{{post.contenido|linebreaksbr}}</p>

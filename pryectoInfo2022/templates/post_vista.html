@@ -5,10 +5,10 @@
 
 
 
-<div class="row row-cols-5 row-cols-md-5 g-4">
+<div class="row row-cols-5 row-cols-md-5 g-4" >
 
     {% for x in post%}
-    <div class="col" style="margin-bottom: 47px;">
+    <div class="col" style="margin-bottom: 47px;" >
       <a href="{% url 'post_detail' x.pk %}" >
         <div class="card h-100 borde">
           
@@ -22,7 +22,7 @@
           <div class="card-body">
             <h5 class="card-title">{{x.titulo}}</h5>
           </div>
-          <ul class="list-group list-group-flush">
+          <ul class="list-group list-group-flush" >
             <li class="list-group-item">Creador: {{x.usuario.username.upper}}</li>
             {% if x.activo %}
             <li class="list-group-item" style="color:blue"><b>ACTIVO</b></li>
