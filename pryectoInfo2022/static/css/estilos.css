@@ -454,7 +454,7 @@ footer{
 .texto_sub{
     font-size: large;
     letter-spacing: 0;
-text-shadow: -3px -3px 3px #000000, 3px -3px 3px #000000, -3px 3px 3px #000000, 3px 3px 3px #000000; */
+    text-shadow: -3px -3px 3px #000000, 3px -3px 3px #000000, -3px 3px 3px #000000, 3px 3px 3px #000000; 
     border-color: #000000;
     position: absolute;
     top: 5%;
