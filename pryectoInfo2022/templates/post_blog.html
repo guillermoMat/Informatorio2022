@@ -35,12 +35,13 @@
                 <div >
                   
                   <h2 class="titulo-post-blog"><a href="{% url 'post_detail' pk=x.pk %}" class="enlace-post-detail"><strong>{{x.titulo}}</strong></a></h2>
-                  <p class="fecha-post-blog">{{x.updated}}</p>
+                  
                   <p class="intro-post-blog">
                     <br>
                     <em>{{ x.introduccion }}</em>
                   </p>
-                  <hr style="border: 10px;">
+                  <hr>
+                  <p class="fecha-post-blog">{{x.updated}}</p>
                   
                 </div>  
               </div>
