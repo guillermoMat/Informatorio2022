@@ -14,9 +14,10 @@
 
 ## Descripcion del proyecto
 
-Este proyecto es un blog realizado para la ONG LALCEC (liga Argentina de lucha contra el cancer). el blog representa toda la informacion acerca de los diferentes tipos  de cancer que se podrian tratar, los profesionales que representan en dicha ONG, sus misiones y toda la informacion de contactos y redes sociales de la ONG.
+Este proyecto es un blog realizado para la ONG LALCEC (liga Argentina de lucha contra el cáncer). el blog representa toda la información acerca de los diferentes tipos de cáncer que se podrían tratar, los profesionales que representan en dicha ONG, sus misiones y toda la información de contactos y redes sociales de la ONG.
 
-El blog tambien cuenta con la funcion de realizar comentarios a travez de facebook en los diferentes posteos y login para personal autorizado
+El blog también cuenta con la función de realizar comentarios a través de Facebook en los diferentes posteos y login para personal autorizado
+
 
 
 ## herramientas
@@ -34,7 +35,8 @@ El blog tambien cuenta con la funcion de realizar comentarios a travez de facebo
 
 ## Desarrollo del proyecto
 
-El Blog fue desarrollado a travez del framework Django, basado en lenguaje python, para la administracion de las diferentes partes de la pagina como la backend y la frontend. la base de datos utilizada en el blog es postregess la cual es administrada por el framework. para la realizacion de diseño se uso css y se utilizaron diferentes plantillas de bootstraps y herramientas como crispy forms de Django. el servidor en el que se aloja el blog es heroku, el mismo es gratuito y facil de conectar.
+El Blog fue desarrollado a través del framework Django, basado en lenguaje Python, para la administración de las diferentes partes de la pagina como la backend y la frontend. la base de datos utilizada en el blog es postreges la cual es administrada por el framework. para la realización de diseño se usó css y se utilizaron diferentes plantillas de bootstraps y herramientas como crispy forms de Django. el servidor en el que se aloja el blog es heroku, el mismo es gratuito y fácil de conectar.
+
 
 
 
