@@ -2,12 +2,13 @@
 
 ## <h1 align="center"> BLOG LALCEC </h1>
 
-![lalcec2](https://user-images.githubusercontent.com/105621701/188179624-2018d264-365e-4059-a12b-93ced072f525.png)
+
+<p align="center"><img src=https://user-images.githubusercontent.com/105621701/188179624-2018d264-365e-4059-a12b-93ced072f525.png></p>
 
 
 <p align="center">
 <a href="http://infolalcecg4.herokuapp.com/">
-   <img src="http://img.shields.io/static/v1?label=STATUS&message=ONLINE&color=RED&style=for-the-badge"/>
+   <img src="http://img.shields.io/static/v1?label=STATUS&message=ONLINE:%20 LINK&color=RED&style=for-the-badge"/>
    </a>
 </p>
 
