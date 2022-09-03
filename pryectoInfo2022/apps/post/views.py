@@ -69,7 +69,7 @@ def post_edit(request, pk):
      
             post.save()
             # return redirect('post_detail', pk=post.pk)
-            return redirect('post')
+            return redirect('vista_post')
     else:
         form = PostForm(instance=post)
     post = {'titulo':'Editar Posteo'}
