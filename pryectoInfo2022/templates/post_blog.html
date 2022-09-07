@@ -25,9 +25,9 @@
             <div class="row">
               <div class="col-5">
                 {% if x.imagen %}
-                  <img class="" height= "" width="" id="imagen-post-blog" src= {{x.imagen.url}} >
+                  <img class="img-fluid" height= "" width="" id="imagen-post-blog" src= {{x.imagen.url}} >
                 {% else %}
-                  <img src="{% static 'img/sin-imagen_cool.jpg'%}" class="" style="" id="imagen-post-blog" alt="...">
+                  <img src="{% static 'img/sin-imagen_cool.jpg'%}" class="img-fluid" style="" id="imagen-post-blog" alt="...">
                 {% endif %}
               </div>
               
